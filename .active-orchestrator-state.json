@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "step": "kb",
+  "step": "roadmap",
   "owner": "active-orchestrator",
   "discovery": {
     "created_by": "discovery-research",
@@ -284,7 +284,17 @@
     },
     "fecha_verificacion_manual": "2026-10-03",
     "responsable_verificacion_manual": "Facundo Chacon",
-    "registro_verificacion": "Las 6 URLs criticas (5 productos) fueron abiertas y verificadas por el autor el 2026-10-03. Los datos coincidieron con lo registrado; no hubo correcciones posteriores. Los hallazgos H-01 a H-06 siguen vigentes. Ver discovery/verificacion-fuentes.md."
+    "registro_verificacion": "Las 6 URLs criticas (5 productos) fueron abiertas y verificadas por el autor el 2026-10-03. Los datos coincidieron con lo registrado; no hubo correcciones posteriores. Los hallazgos H-01 a H-06 siguen vigentes. Ver discovery/verificacion-fuentes.md.",
+    "system_info": {
+      "system_type": "web_app",
+      "domain": "salud / gestion de consultorios odontologos",
+      "scale": "public_multi_user",
+      "stack": "FastAPI 3.11 + PostgreSQL 15 + React 18 (Vite) + Docker Compose",
+      "needs_infra": true,
+      "stack_confianza": "alta (decision del equipo, registrada como DD-11)",
+      "stack_no_es_hallazgo": "El stack no es un hallazgo de la investigacion. Es una decision de diseño del equipo (DD-11).",
+      "needs_infra_motivo": "PostgreSQL real obligatorio: EXCLUDE USING gist (DD-05)."
+    }
   },
   "kb": {
     "created_by": "kb-creator",
