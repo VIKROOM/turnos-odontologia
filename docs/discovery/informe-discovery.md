@@ -331,6 +331,12 @@ El relevamiento inicial cometió cinco errores que se corrigen aquí y quedan re
 | H-03 | Se registró DentalFLOW como con recordatorios automáticos sin matizar | Impreciso. Los recordatorios salen por email; WhatsApp está declarado «en camino» |
 | H-04 | Se registró a Dentatools como un producto con alcance en obras sociales y prepagas | Falso. Dentatools declara explícitamente que **no** gestiona obras sociales ni prepagas ni emite factura electrónica AFIP |
 | H-05 | Se tomó la matriz comparativa inicial como si cumpliera la consigna | Era **inválida en dos dimensiones**: tenía 6 criterios en escala 1–5 con pesos 25/20/20/15/10/10, cuando la consigna fija **7** criterios en escala **0–5** con pesos 25/20/15/15/10/10/5. El ranking se recalculó sobre la matriz oficial: Órbita pasa de 7° a 1° (4,88/5) y DentalSaaS de 1° a 2° (4,30/5) |
+| H-06 | Orbita fue catalogado como "sin precios públicos" y como único competidor que nombra la agenda por sillón | Falso en ambas. Publica plan Consultorio desde USD 25/mes y su propia comparativa concede agenda validada por sillón a otros. |
+| H-07 | Contradicción D.3/D.4 en el alcance: D.4 incluía lista de espera y sobreturnos en la v1 mientras D.3 los ponía en etapas posteriores | Corregido en D.4 para alinearlo con D.3 y con la evidencia documental (06_funcionalidades.md no las menciona; .active-orchestrator-state.json las tiene en opcionales). Se deja constancia de la tensión con el ausentismo. Fecha: 2026-10-05 — Protocolo: Ajustar |
+| H-08 | Cifras contradictorias en la KB: recordatorios 13/19 vs 10/19, historia clínica 17/19 vs 13/19, WhatsApp 12/19 vs 7/19; además mezcla 1/19 vs 8/19 en obras sociales | Alineadas con el informe §B (fuente auditada). Las discrepancias se atribuyen a desalineamiento de filas y a mediciones mezcladas; no se promediaron. Fecha: 2026-10-05 — Protocolo: Ajustar |
+| H-09 | IN-01/IN-02/IN-03 obsoletas tras las correcciones de H-01/H-05/H-06 | Marcadas como [RESUELTO] en knowledge-base/10_preguntas_abiertas.md con referencia a los hallazgos, fecha 2026-10-05, protocolo Ajustar. |
+| H-10 | docs/etapa0/README.md afirmaba que faltaban dos capturas que ya existían (01-instalador-full.png, 02-harnesses.png) | Se actualizó el estado a "hecho" con existencia/tamaño/dimensiones comprobados. Fecha: 2026-10-05 — Protocolo: Ajustar |
+| H-11 | Título raíz partido: `# Saas-Odonolog-a` en README.md | Restaurado a `# SaaS Odontología`. Fecha: 2026-10-05 — Protocolo: Ajustar |
 
 ### E.2 Contradicción en la fuente de Órbita
 
