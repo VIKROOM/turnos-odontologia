@@ -7,7 +7,7 @@
 
 ## Evidencia extraida del sitio
 
-Agenda de turnos donde el paciente elige dia y hora y el sistema crea el paciente si es nuevo. Odontograma por caras en notacion FDI con cada cambio fechado; lo pendiente arma solo el plan de tratamiento y pasa a azul al atender. Control de stock de materiales con descuento automatico, gastos y resumen mensual de ingresos y resultado.
+Agenda de turnos donde el paciente elige dia y hora y el sistema crea el paciente si es nuevo. Odontograma por caras en notación FDI con cada cambio fechado; lo pendiente arma solo el plan de tratamiento y pasa a azul al atender. Control de stock de materiales con descuento automatico, gastos y resumen mensual de ingresos y resultado.
 
 ## Notas de analisis
 

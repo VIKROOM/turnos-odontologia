@@ -7,8 +7,8 @@
 
 ## Evidencia extraida del sitio
 
-Agenda inteligente con bloqueo de horarios, historia clinica digital con odontograma y periodontograma, fichas por disciplina (Ortodoncia, Periodoncia, Endodoncia, Implantologia, Protesis, Cirugia), portal del paciente con autogestión de turnos, catalogo nacional de obras sociales precargado con importacion masiva, nomenclador de practicas por pais, recetas en PDF A5, white label, 10+ reportes PDF/Excel. Sin contratos de permanencia.
+Agenda inteligente con bloqueo de horarios, historia clínica digital con odontograma y periodontograma, fichas por disciplina (Ortodoncia, Periodoncia, Endodoncia, Implantologia, Protesis, Cirugia), portal del paciente con autogestión de turnos, catalogo nacional de obras sociales precargado con importacion masiva, nomenclador de prácticas por pais, recetas en PDF A5, white label, 10+ reportes PDF/Excel. Sin contratos de permanencia.
 
 ## Notas de analisis
 
-El mas completo del conjunto en alcance funcional. Autogendamiento: si (portal del paciente). No declara integracion con AFIP/ARCA. WhatsApp requiere configuracion adicional con costo no publicado.
+El mas completo del conjunto en alcance funcional. Autogendamiento: si (portal del paciente). No declara integración con AFIP/ARCA. WhatsApp requiere configuración adicional con costo no publicado.

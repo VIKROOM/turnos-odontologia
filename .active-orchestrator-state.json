@@ -149,29 +149,29 @@
       "recepcion o secretaria",
       "odontologo asistente",
       "multi-profesional y multi-sede",
-      "facturacion electronica",
-      "receta electronica",
+      "facturacion electrónica",
+      "receta electrónica",
       "obras sociales y prepagas"
     ],
     "casos_de_uso": [
       "Como paciente, quiero ver los horarios libres de un sillon y reservar sin llamar, para no depender del horario de atencion del consultorio",
       "Como odontologo, quiero que la agenda se complete sola pero poder bloquear y reservar los slots que necesito, para no perder control operativo",
-      "Como odontologo, quiero ver la semana por sillon con la duracion de cada practica, para detectar huecos muertos y decidir cuanto tiempo ofrecer",
+      "Como odontologo, quiero ver la semana por sillon con la duracion de cada práctica, para detectar huecos muertos y decidir cuanto tiempo ofrecer",
       "Como paciente, quiero cancelar o reprogramar mi turno yo mismo, sin llamar",
       "Como odontologo, quiero la ficha del paciente con odontograma siempre a mano durante la consulta"
     ],
     "funcionalidades_necesarias": [
-      "Agenda por sillon con duracion por practica configurable",
+      "Agenda por sillon con duracion por práctica configurable",
       "Prevencion de solapamientos sobre esa duracion",
       "Autogendamiento del paciente 24/7 desde link propio, sin instalacion",
       "Gestion de pacientes (contacto, DNI)",
-      "Historia clinica con odontograma por pieza",
+      "Historia clínica con odontograma por pieza",
       "Cancelacion y reprogramacion por el paciente",
       "Bloqueo de horarios por el odontologo",
       "Reservas protegidas del odontologo, no ofrecidas al autoagendado"
     ],
     "funcionalidades_opcionales": [
-      "Recordatorios y confirmaciones automaticas por WhatsApp",
+      "Recordatorios y confirmaciones automáticas por WhatsApp",
       "Lista de espera con disparo por el paciente",
       "Sobreturnos para urgencias",
       "Pacientes recurrentes con turno fijo",
@@ -188,39 +188,39 @@
       "La agenda se presenta sobre el recurso fisico (sillon), no solo sobre el profesional"
     ],
     "integraciones": [
-      "Ninguna integracion externa obligatoria en v1 (decision consciente)"
+      "Ninguna integración externa obligatoria en v1 (decisión consciente)"
     ],
     "restricciones": [
       "Stack libre: la consigna no impone tecnologia",
-      "Plazo ~2 meses hasta el primer release funcional (supuesto, no restriccion de la consigna)",
-      "Ley 25.326 de proteccion de datos personales: la historia clinica es dato sensible de salud",
-      "Alcance legal ambiguo: sin receta electronica el producto NO puede recetar; debe quedar explicito"
+      "Plazo ~2 meses hasta el primer release funcional (supuesto, no restricción de la consigna)",
+      "Ley 25.326 de proteccion de datos personales: la historia clínica es dato sensible de salud",
+      "Alcance legal ambiguo: sin receta electrónica el producto NO puede recetar; debe quedar explicito"
     ],
     "riesgos": [
       "PERDIDA DE CONTROL DE LA AGENDA: riesgo estructural del autoagendamiento. Si un paciente recurrente que reserva hace 6 meses puede ser expropiado por uno nuevo, el consultorio pierde el motivo principal para adoptar el sistema. Mitigacion prevista: reservas protegidas y bloqueos explicitos.",
-      "RESISTENCIA A LA AUTO-RESERVA: el odontologo ya tiene al paciente en su ficha y prefiere llamar. Si el consultorio tiene baja rotacion, la agenda por sillon no le aporta nada visible. Supuesto sin probar: no hay validacion con odontologos reales.",
+      "RESISTENCIA A LA AUTO-RESERVA: el odontologo ya tiene al paciente en su ficha y prefiere llamar. Si el consultorio tiene baja rotacion, la agenda por sillon no le aporta nada visible. Supuesto sin probar: no hay validación con odontologos reales.",
       "AUSENCIA DE RECORDATORIOS POR WHATSAPP: 14 de 19 competidores los ofrecen y los dos lideres los tienen. Sin ellos el ausentismo (el problema que declaramos resolver) queda a medias.",
-      "CUMPLIMIENTO LEY 25.326 Y ALCANCE LEGAL: historia clinica sensible mas exclusion de receta electronica. Sin responsable de tratamiento, consentimiento y hosting definidos, el producto queda expuesto. En un TPI academico esto se documenta como decision de diseno, no como cumplimiento real.",
-      "EROSION DE DIFERENCIACION (nuevo, critico): el diferencial funcional elegido quedo obsoleto durante el propio Discovery. Orbita lanzo en 2026 agenda por sillon con choque imposible, agendamiento inteligente que llena huecos y precio desde USD 25/mes. Si replicamos la agenda por sillon como argumento principal, competimos contra un producto que ya la tiene y es mas completo. Mitigacion: abandonar la venta de funcionalidad y vender simplicidad de un sillon.",
-      "GUERRA DE PRECIOS (nuevo, critico): con referencia de USD 25/mes publicada, cualquier precio en pesos que elijamos esta lejos del piso. Si elegimos competir por precio perdemos margen; si elegimos precio alto no somos relevantes frente a Orbita. Sin validacion con clientes reales esto no se puede decidir.",
+      "CUMPLIMIENTO LEY 25.326 Y ALCANCE LEGAL: historia clínica sensible más exclusión de receta electrónica. Sin responsable de tratamiento, consentimiento y hosting definidos, el producto queda expuesto. En un TPI academico esto se documenta como decisión de diseno, no como cumplimiento real.",
+      "EROSION DE DIFERENCIACION (nuevo, critico): el diferencial funcional elegido quedo obsoleto durante el propio Discovery. Orbita lanzo en 2026 agenda por sillon con choque imposible, agendamiento inteligente que llena huecos y precio desde USD 25/mes. Si replicamos la agenda por sillon como argumento principal, competimos contra un producto que ya la tiene y es más completo. Mitigacion: abandonar la venta de funcionalidad y vender simplicidad de un sillon.",
+      "GUERRA DE PRECIOS (nuevo, critico): con referencia de USD 25/mes publicada, cualquier precio en pesos que elijamos esta lejos del piso. Si elegimos competir por precio perdemos margen; si elegimos precio alto no somos relevantes frente a Orbita. Sin validación con clientes reales esto no se puede decidir.",
       "DEPENDENCIA DE UN SOLO COMPETIDOR COMO REFERENCIA: la conclusion de que la simplicidad es el hueco defendible se apoya en gran medida en la ausencia de un competitor que la ofrezca. Si alguien lo ofrece, la tesis cae. Es un riesgo de evidencia, no de producto."
     ],
     "no_evidenciado": [
-      "Duracion promedio real por practica odontologica: ningun competidor publica un nomenclador de duraciones abierto, hay que configurarlas a mano",
+      "Duracion promedio real por práctica odontológica: ningun competidor publica un nomenclador de duraciones abierto, hay que configurarlas a mano",
       "Precio real de la mayoria: 12 de 19 no publican precio, 2 cobran en USD, TurnosUno publica precio de promo con 80% OFF",
       "Que la agenda por sillon sea un factor de compra decisionario: REFUTADO como hipotesis. No solo la ofrece Orbita: su propia comparativa se la atribuye a Bilog, Benty y Dentalink",
       "Si el precio en dolares de Orbita (USD 25/mes) realmente cuesta AR$38.250 para un consultorio unipersonal, o si el costo real en pesos con brecha cambiaria lo hace inviable. Es la pregunta que define nuestra ventaja de precio y NO esta verificada",
-      "Numero real de usuarios activos: las cifras (+500 profesionales, 300+ clinicas, 2.000+ profesionales) son declaradas por el vendedor, sin auditoria ni fuente primaria",
-      "Si algun competidor argentino cumple efectivamente la Ley 27.553 de receta electronica en produccion",
-      "Que los contactos de WhatsApp via API oficial de Meta esten disponibles para una startup sin volumen previo, y a que costo. Es la unica integracion que la v1 considera y no esta verificada"
+      "Numero real de usuarios activos: las cifras (+500 profesionales, 300+ clínicas, 2.000+ profesionales) son declaradas por el vendedor, sin auditoría ni fuente primaria",
+      "Si algun competidor argentino cumple efectivamente la Ley 27.553 de receta electrónica en produccion",
+      "Que los contactos de WhatsApp via API oficial de Meta esten disponibles para una startup sin volumen previo, y a que costo. Es la única integración que la v1 considera y no esta verificada"
     ],
     "preguntas_abiertas": [
       "WhatsApp entra en la v1 o queda en backlog? Esta tensionado: se eligio 'sin integraciones' y a la vez se marco como riesgo. Ahora suma que los dos lideres ya lo tienen",
       "Como se protege el slot del paciente recurrente frente al autoagendado, y quien tiene prioridad en caso de conflicto",
       "Cual es la anticipacion minima para cancelar, y puede el odontologo cancelar un turno del paciente",
-      "Donde se hospeda la historia clinica y como se documenta el cumplimiento de la Ley 25.326 en un proyecto academico",
-      "El precio publico en pesos es un diferencial real o solo una decision de marketing. Ahora es LA hipotesis central, porque Orbita cobra en dolares",
-      "Las duraciones por practica se precargan desde un nomenclador o las carga siempre el odontologo (no hay fuente para precargarlas)",
+      "Donde se hospeda la historia clínica y como se documenta el cumplimiento de la Ley 25.326 en un proyecto academico",
+      "El precio publico en pesos es un diferencial real o solo una decisión de marketing. Ahora es LA hipotesis central, porque Orbita cobra en dolares",
+      "Las duraciones por práctica se precargan desde un nomenclador o las carga siempre el odontologo (no hay fuente para precargarlas)",
       "Si el segmento unipersonal alcanza volumen suficiente para sostener el desarrollo. El relevamiento no permite responderlo"
     ],
     "posicion_en_matriz": {
@@ -235,32 +235,32 @@
       },
       "ponderado": 3.05,
       "escala": "0-5",
-      "nota": "Es la posicion proyectada de la v1 segun los 7 criterios y la escala 0-5 de la consigna, no un producto existente. Se compara contra el mejor del relevamiento: Orbita 4,88/5 y DentalSaaS 4,30/5. El deficit esta en funcionalidad clinica (20%), integraciones (15%) y administracion (15%), que la v1 renuncia explicitamente. Compensa en experiencia de paciente (10%), precio (5%) y, por encima del promedio, en seguridad (10%)."
+      "nota": "Es la posicion proyectada de la v1 segun los 7 criterios y la escala 0-5 de la consigna, no un producto existente. Se compara contra el mejor del relevamiento: Orbita 4,88/5 y DentalSaaS 4,30/5. El deficit esta en funcionalidad clínica (20%), integraciones (15%) y administración (15%), que la v1 renuncia explicitamente. Compensa en experiencia de paciente (10%), precio (5%) y, por encima del promedio, en seguridad (10%)."
     },
-    "diferenciacion_elegida": "RENUNCIADO como diferencial funcional. La agenda por sillon con duracion configurable ya no distingue: DentalFLOW la garantiza en base de datos y Orbita ofrece choque imposible. El diferencial sostenible es de POSICIONAMIENTO: la operacion mas simple para un consultorio de un sillon, con autogendamiento real, sin integraciones obligatorias en v1 y facturacion en pesos (no en dolares como Orbita).",
+    "diferenciacion_elegida": "RENUNCIADO como diferencial funcional. La agenda por sillon con duracion configurable ya no distingue: DentalFLOW la garantiza en base de datos y Orbita ofrece choque imposible. El diferencial sostenible es de POSICIONAMIENTO: la operación más simple para un consultorio de un sillon, con autogendamiento real, sin integraciones obligatorias en v1 y facturacion en pesos (no en dolares como Orbita).",
     "informe_pdf": "docs/discovery/informe-discovery.pdf",
     "informe_del_skill": "docs/discovery/checklist-discovery.md",
     "nota_reconciliacion": "La consigna exige que el resultado estructurado de discovery-research (checklist de once puntos) quede en la MISMA carpeta que el informe. Por eso discovery/discovery.md se copio a docs/discovery/checklist-discovery.md, con la matriz de pesos inventados conservada dentro de <details> y marcada como superada, y con H-05 corregido a escala 0-5. El original queda en discovery/ como registro del error.",
     "hallazgos_de_revision": [
       "H-01: se afirmo que la agenda por sillon era diferencial exclusivo. FALSO. DentalFLOW la garantiza a nivel de base de datos ('no hay doble reserva') y Orbita ofrece choque imposible. Ademas la comparativa de Orbita afirma que Bilog, Benty y Dentalink tambien tienen agenda validada por sillon.",
       "H-02: DentalSaaS fue catalogado como 'sin precios publicos'. FALSO. Publica $59.000 / $149.000 / $349.000 por mes.",
-      "H-03: DentalFLOW fue registrado con recordatorios automaticos sin matizar. IMPRECISO. Los recordatorios salen por email; WhatsApp esta declarado 'en camino'.",
-      "H-04: Dentatools fue registrado con alcance en obras sociales y prepagas. FALSO. Declara explicitamente que NO gestiona obras sociales ni prepagas ni emite factura electronica AFIP.",
+      "H-03: DentalFLOW fue registrado con recordatorios automáticos sin matizar. IMPRECISO. Los recordatorios salen por email; WhatsApp esta declarado 'en camino'.",
+      "H-04: Dentatools fue registrado con alcance en obras sociales y prepagas. FALSO. Declara explicitamente que NO gestiona obras sociales ni prepagas ni emite factura electrónica AFIP.",
       "H-05: la matriz comparativa se tomo como si cumpliera la consigna. FALSO en dos dimensiones: tenia 6 criterios en escala 1-5 con pesos 25/20/20/15/10/10, cuando la consigna fija 7 criterios en escala 0-5 con pesos 25/20/15/15/10/10/5. El ranking se recalculo sobre la matriz oficial: Orbita pasa de 7o a 1o (4,88/5) y DentalSaaS de 1o a 2o (4,30/5).",
-      "H-06: Orbita fue catalogado como 'sin precios publicos' y como unico competidor que nombra la agenda por sillon. FALSO en ambas. Publica plan Consultorio desde USD 25/mes y su propia comparativa concede agenda validada por sillon a los demas.",
-      "CONTRADICCION EN FUENTE: hiorbita.com/comparativa afirma a la vez que otros sistemas NO evitan el choque de sillon y que SI tienen agenda validada por sillon. Registrado como afirmacion comercial no verificable; no se uso para puntuar."
+      "H-06: Orbita fue catalogado como 'sin precios publicos' y como único competidor que nombra la agenda por sillon. FALSO en ambas. Publica plan Consultorio desde USD 25/mes y su propia comparativa concede agenda validada por sillon a los demas.",
+      "CONTRADICCION EN FUENTE: hiorbita.com/comparativa afirma a la vez que otros sistemas NO evitan el choque de sillon y que SI tienen agenda validada por sillon. Registrado como afirmación comercial no verificable; no se uso para puntuar."
     ],
     "hallazgos_competitivos_clave": [
-      "ORBITA PUBLICA PRECIO Y GANA POR MUCHO: plan Consultorio USD 25/mes (~AR$38.250) que incluye agenda por sillon con choque imposible, ficha con odontograma completo e historia clinica firmada. Ademas ofrece agendamiento inteligente que ofrece primero los horarios que no dejan huecos. Es el competidor real de la v1 y el techo del relevamiento (4,88/5).",
+      "ORBITA PUBLICA PRECIO Y GANA POR MUCHO: plan Consultorio USD 25/mes (~AR$38.250) que incluye agenda por sillon con choque imposible, ficha con odontograma completo e historia clínica firmada. Ademas ofrece agendamiento inteligente que ofrece primero los horarios que no dejan huecos. Es el competidor real de la v1 y el techo del relevamiento (4,88/5).",
       "ORBITA FIXA EL PRECIO EN DOLARES con referencia al dolar oficial venta del BNA ($1.530, 11/09/2026). Para un consultorio unipersonal argentino esto es riesgo de costo, no ventaja. Es la brecha que la v1 puede atacar.",
-      "ORBITA USA LA API OFICIAL DE META con el numero de la clinica, y declara que la mayoria de los bots del rubro corren sobre librerias no oficiales. Si Meta lo detecta, la clinica pierde el numero. Es un riesgo real de la categoria que la v1 puede no heredar.",
-      "DENTALSAAS EXCLUYE WHATSAPP DEL PRECIO PUBLICADO: el servicio de recordatorios requiere configuracion adicional con costo no publicado, y el asistente de IA para WhatsApp es un complemento aparte. Ademas su plan Consultorio limita a 300 pacientes y 300 turnos/mes. Nuestra ventana concreta.",
-      "DENTALFLOW tiene la mejor evidencia de seguridad del relevamiento: auditoria de cada acceso a las historias clinicas, cifrado en transito y reposo, aislamiento entre consultorios, y garantia explicita de no-doble-reserva. Ademas ofrece prueba gratuita con datos propios. Es la referencia para el criterio de seguridad.",
+      "ORBITA USA LA API OFICIAL DE META con el numero de la clínica, y declara que la mayoria de los bots del rubro corren sobre librerias no oficiales. Si Meta lo detecta, la clínica pierde el numero. Es un riesgo real de la categoría que la v1 puede no heredar.",
+      "DENTALSAAS EXCLUYE WHATSAPP DEL PRECIO PUBLICADO: el servicio de recordatorios requiere configuración adicional con costo no publicado, y el asistente de IA para WhatsApp es un complemento aparte. Ademas su plan Consultorio limita a 300 pacientes y 300 turnos/mes. Nuestra ventana concreta.",
+      "DENTALFLOW tiene la mejor evidencia de seguridad del relevamiento: auditoría de cada acceso a las historias clínicas, cifrado en transito y reposo, aislamiento entre consultorios, y garantia explicita de no-doble-reserva. Ademas ofrece prueba gratuita con datos propios. Es la referencia para el criterio de seguridad.",
       "DENTATOOLS declara explicitamente que NO hace obras sociales, prepagas ni factura AFIP. Es el modelo de posicionamiento honesto por scope que la v1 propone replicar."
     ],
-    "precio_recomendado": "AR$25.000-35.000/mes, plan unico de un sillon, con prueba gratuita de 30 dias sin tarjeta, sin permanencia contractual, facturacion en pesos argentinos (no en dolares) y exportacion total incluida. Piso de referencia del relevamiento: AR$6.000/mes (TurnosUno, sin clinica), $30.000/mes (Dentatools, con historia clinica), $59.000/mes (DentalSaaS Consultorio), USD 25/mes (Orbita Consultorio, ~AR$38.250 a referencia oficial).",
+    "precio_recomendado": "AR$25.000-35.000/mes, plan único de un sillon, con prueba gratuita de 30 dias sin tarjeta, sin permanencia contractual, facturacion en pesos argentinos (no en dolares) y exportación total incluida. Piso de referencia del relevamiento: AR$6.000/mes (TurnosUno, sin clínica), $30.000/mes (Dentatools, con historia clínica), $59.000/mes (DentalSaaS Consultorio), USD 25/mes (Orbita Consultorio, ~AR$38.250 a referencia oficial).",
     "fecha_revision": "2026-10-03",
-    "etapa2_estado": "CERRADA. Auditada contra la consigna y corregida: secciones A, B, C y D, escala oficial 0-5 y checklist de once puntos en la misma carpeta que el informe. Verificacion manual de las 5 fuentes criticas completada el 2026-10-03 por Facundo Chacon. Los 10 puntos \"No evidenciado\" NO se resolvieron con esa verificacion (requieren comportamiento de usuarios, no lo que publica el proveedor) y siguen abiertos en knowledge-base/10_preguntas_abiertas.md.",
+    "etapa2_estado": "CERRADA. Auditada contra la consigna y corregida: secciones A, B, C y D, escala oficial 0-5 y checklist de once puntos en la misma carpeta que el informe. Verificacion manual de las 5 fuentes criticas completada el 2026-10-03 por Facundo Chacon. Los 10 puntos \"No evidenciado\" NO se resolvieron con esa verificación (requieren comportamiento de usuarios, no lo que publica el proveedor) y siguen abiertos en knowledge-base/10_preguntas_abiertas.md.",
     "gate_discovery": "cerrado_verificacion_manual_ok",
     "checklist_del_skill": "docs/discovery/checklist-discovery.md",
     "integrantes": [
@@ -268,11 +268,11 @@
       "Máximo Monardes",
       "Facundo Chácon"
     ],
-    "nota_integrantes": "Confirmados por el autor. Son 3 integrantes, dentro del maximo de 3 que permite la consigna. Facundo Chacon es el autor de esta sesion.",
+    "nota_integrantes": "Confirmados por el autor. Son 3 integrantes, dentro del maximo de 3 que permite la consigna. Facundo Chacon es el autor de esta sesión.",
     "auditoria_consigna": {
       "fecha": "2026-10-03",
-      "escala_0_5": "CORREGIDO. La matriz y sus 19 puntajes estan en 0-5, no en 0-10.",
-      "C_subsecciones": "CORREGIDO. C.1 estandar de mercado, C.2 diferenciadores reales, C.3 vacios del mercado argentino, C.4 oportunidades de innovacion, C.5 riesgos.",
+      "escala_0_5": "CORREGIDO. La matriz y sus 19 puntajes están en 0-5, no en 0-10.",
+      "C_subsecciones": "CORREGIDO. C.1 estandar de mercado, C.2 diferenciadores reales, C.3 vacios del mercado argentino, C.4 oportunidades de innovación, C.5 riesgos.",
       "D_competidores_demo": "CORREGIDO. D.1 lista 5: Orbita, DentalSaaS, DentalFLOW, Dentatools, TurnosUno.",
       "D_referencias_ux": "CORREGIDO. D.2 lista 3: DentalSoft, Orbita Chat, Consultorio Digital.",
       "D_mvp_tres_listas": "CORREGIDO. D.3 divide en imprescindibles, diferenciadores y para etapas posteriores, con justificacion y momento de evaluacion.",
@@ -280,7 +280,7 @@
       "E_verificacion_tres_columnas": "CORREGIDO. E.5 registra que afirmaba el informe, que se encontro en la fuente y que se corrigio, para las 5 fuentes.",
       "checklist_misma_carpeta": "CORREGIDO. docs/discovery/checklist-discovery.md con los 11 puntos.",
       "integridad_encoding": "VERIFICADO. Sin caracteres CJK ni full-width en MD, PDF ni checklist.",
-      "PENDIENTE": "La verificacion manual de las 5 fuentes criticas la hace una persona. Es lo unico que bloquea el cierre."
+      "PENDIENTE": "La verificación manual de las 5 fuentes criticas la hace una persona. Es lo único que bloquea el cierre."
     },
     "fecha_verificacion_manual": "2026-10-03",
     "responsable_verificacion_manual": "Facundo Chacon",
@@ -294,11 +294,11 @@
       "system_type": "web_app",
       "domain": "salud / gestion de consultorios odontologos",
       "scale": "public_multi_user",
-      "stack": "FastAPI 3.11 + PostgreSQL 15 + React 18 (Vite) + Docker Compose -- DECIDIDO por el equipo el 2026-10-03 (DD-11). No proviene del Discovery: la consigna deja el stack libre y ningun documento de docs/ fija tecnologias. PostgreSQL es requisito duro por la restriccion EXCLUDE USING gist que garantiza la ausencia de solapamientos (DD-05).",
+      "stack": "FastAPI 3.11 + PostgreSQL 15 + React 18 (Vite) + Docker Compose -- DECIDIDO por el equipo el 2026-10-03 (DD-11). No proviene del Discovery: la consigna deja el stack libre y ningun documento de docs/ fija tecnologías. PostgreSQL es requisito duro por la restricción EXCLUDE USING gist que garantiza la ausencia de solapamientos (DD-05).",
       "needs_infra": true,
-      "stack_confianza": "alta (decision del equipo, registrada como DD-11)",
-      "stack_no_es_hallazgo": "El stack no es un hallazgo de la investigacion. Es una decision de diseño del equipo. En 10_preguntas_abiertas.md quedo como [RESUELTO] stack para que no se confunda con evidencia.",
-      "needs_infra_motivo": "PostgreSQL real obligatorio: la restriccion de exclusion con rangos que garantiza la ausencia de solapamientos no existe en SQLite ni MySQL, y los tests de conflicto corren contra la base real en Docker (DD-10)."
+      "stack_confianza": "alta (decisión del equipo, registrada como DD-11)",
+      "stack_no_es_hallazgo": "El stack no es un hallazgo de la investigacion. Es una decisión de diseño del equipo. En 10_preguntas_abiertas.md quedo como [RESUELTO] stack para que no se confunda con evidencia.",
+      "needs_infra_motivo": "PostgreSQL real obligatorio: la restricción de exclusión con rangos que garantiza la ausencia de solapamientos no existe en SQLite ni MySQL, y los tests de conflicto corren contra la base real en Docker (DD-10)."
     },
     "files": [
       "knowledge-base/01_vision_y_objetivos.md",

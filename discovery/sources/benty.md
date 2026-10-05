@@ -7,7 +7,7 @@
 
 ## Evidencia extraida del sitio
 
-Agenda, pacientes e historia clinica en una sola plataforma. Acompanamiento en la puesta en marcha. Contacto por WhatsApp.
+Agenda, pacientes e historia clínica en una sola plataforma. Acompanamiento en la puesta en marcha. Contacto por WhatsApp.
 
 ## Notas de analisis
 

@@ -7,8 +7,8 @@
 
 ## Evidencia extraida del sitio
 
-Declara 1.500+ clinicas y consultorios y mas de 20 anos acompanando la odontologia argentina. Tres soluciones segmentadas: consultorios odontologos, clinicas odontologicas, y obras sociales/gerenciadoras (control prestacional, validacion de procesos, trazabilidad). Funciones declaradas: turnos, pacientes, historia clinica, recordatorios, profesionales, agendas, liquidaciones e indicadores.
+Declara 1.500+ clínicas y consultorios y mas de 20 anos acompanando la odontologia argentina. Tres soluciones segmentadas: consultorios odontologos, clínicas odontologicas, y obras sociales/gerenciadoras (control prestacional, validación de procesos, trazabilidad). Funciones declaradas: turnos, pacientes, historia clínica, recordatorios, profesionales, agendas, liquidaciones e indicadores.
 
 ## Notas de analisis
 
-El competidor mas instalado del conjunto y el unico con un producto para gerenciadoras de obras sociales. Trayectoria de 20+ anos es la mayor del mercado. Autogendamiento: no evidencia declarada.
+El competidor mas instalado del conjunto y el único con un producto para gerenciadoras de obras sociales. Trayectoria de 20+ anos es la mayor del mercado. Autogendamiento: no evidencia declarada.

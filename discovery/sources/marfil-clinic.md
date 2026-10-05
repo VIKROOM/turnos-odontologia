@@ -7,7 +7,7 @@
 
 ## Evidencia extraida del sitio
 
-Agenda visual con grilla mensual y drag & drop; cada profesional ve su propia agenda. Historia clinica digital con odontograma interactivo. Notificaciones por email y WhatsApp. Multi-profesional con espacio aislado por consultorio (multi-tenant), usuarios y permisos por profesional. Fotos por QR durante la consulta. Facturacion y aranceles por obra social integrados. Siete temas de color de producto.
+Agenda visual con grilla mensual y drag & drop; cada profesional ve su propia agenda. Historia clínica digital con odontograma interactivo. Notificaciones por email y WhatsApp. Multi-profesional con espacio aislado por consultorio (multi-tenant), usuarios y permisos por profesional. Fotos por QR durante la consulta. Facturacion y aranceles por obra social integrados. Siete temas de color de producto.
 
 ## Notas de analisis
 

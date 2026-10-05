@@ -7,8 +7,8 @@
 
 ## Evidencia extraida del sitio
 
-Agenda de turnos semanal y diaria, ficha del paciente e historia clinica, odontograma y periodontograma digitales, consentimientos con firma digital, finanzas (ingresos/egresos/resumen), control de inventario, tratamientos, especialidades y obras sociales. Acceso desde cualquier dispositivo. Soporte por WhatsApp.
+Agenda de turnos semanal y diaria, ficha del paciente e historia clínica, odontograma y periodontograma digitales, consentimientos con firma digital, finanzas (ingresos/egresos/resumen), control de inventario, tratamientos, especialidades y obras sociales. Acceso desde cualquier dispositivo. Soporte por WhatsApp.
 
 ## Notas de analisis
 
-Posicionamiento explicito contra 'software legacy' (servidor local). Autogendamiento del paciente: no evidencia declarada. No declara receta electronica ni AFIP.
+Posicionamiento explicito contra 'software legacy' (servidor local). Autogendamiento del paciente: no evidencia declarada. No declara receta electrónica ni AFIP.

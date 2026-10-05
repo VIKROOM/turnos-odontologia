@@ -45,7 +45,7 @@ como núcleo aislado del dominio clínico.
      |         +--> Motor de disponibilidad  <-- reglas de negocio puras
      |                  |
      +-------------> PostgreSQL
-                        (restriccion de exclusion: sin solapamiento)
+                        (restricción de exclusión: sin solapamiento)
 ```
 
 Decisiones de alto nivel y su motivo:
@@ -55,14 +55,14 @@ Decisiones de alto nivel y su motivo:
    complejidad de build, cache y estado sin aporte de valor real en el v1.
 2. **El paciente no tiene cuenta en el v1.** Reserva con un enlace firmado por
    turno. Ver `09_decisiones_y_supuestos.md`, DD-04.
-3. **La disponibilidad es una funcion pura y testeable.** Todas las reglas de
+3. **La disponibilidad es una función pura y testeable.** Todas las reglas de
    `05_reglas_de_negocio.md` se evaluan contra una lista de intervalos, sin
    tocar la base de datos. Eso permite cubrirlas con tests unitarios sin
    levantar infraestructura.
 4. **El conflicto de horario no se resuelve en el backend de aplicación.** Se
    resuelve con una restricción de base de datos. Ver DD-05.
 
-## Integraciónes externas
+## Integraciones externas
 
 Discovery conclusión: **ninguna integración externa es obligatoria en el v1**.
 Este es un hallazgo con confianza alta, verificado en `discovery/verificacion-fuentes.md`.
@@ -72,7 +72,7 @@ Este es un hallazgo con confianza alta, verificado en `discovery/verificacion-fu
 | WhatsApp Business API | Recordatorios | API de proveedor | Fuera de v1 |
 | Servicio de email transacciónal | Confirmaciones | SMTP o API | Fuera de v1 |
 | AFIP / ARCA | Facturación electrónica | API SOAP | Fuera de v1 |
-| Obras sociales / coseguros | Credenciales y aceptacion | Sin definir | Fuera de v1 |
+| Obras sociales / coseguros | Credenciales y aceptación | Sin definir | Fuera de v1 |
 | Pasarela de pago | Cobro de anticipos | Sin definir | No fue evaluado |
 
 `needs_infra` es de todos modos `true`: aunque no haya integraciones de terceros, el
@@ -138,6 +138,6 @@ Discovery. El dato que sostiene el proyecto:
 | Historia clínica electrónica | 17 de 19 |
 | Recordatorios por WhatsApp | 12 de 19 |
 
-Consecuencia de producto: **la agenda no es un diferencial**. La agregacion por
-sillón tampoco lo es, porque el competidor de mejor puncionacion ya lo hace.
+Consecuencia de producto: **la agenda no es un diferencial**. La agregación por
+sillón tampoco lo es, porque el competidor de mejor puntuación ya lo hace.
 Ver DD-06.

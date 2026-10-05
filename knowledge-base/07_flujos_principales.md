@@ -19,8 +19,8 @@
 4. El paciente elige un horario y completa nombre, teléfono y consentimiento.
 5. La API inserta el turno dentro de una transacción.
 6. La base de datos aplica la restricción de exclusión sobre `recurso_id`.
-7. Si la insercion es valida, la API devuelve el enlace con `token_público`.
-8. Si la insercion viola la restricción, la API responde conflicto y el cliente
+7. Si la inserción es valida, la API devuelve el enlace con `token_público`.
+8. Si la inserción viola la restricción, la API responde conflicto y el cliente
    vuelve a pedir disponibilidad. **No** muestra éxito.
 
 ```
@@ -53,7 +53,7 @@ haga eso.
 1. Ambas peticiones llegan al backend.
 2. Ambas pasan la validación de disponibilidad, que leyó el mismo estado.
 3. Ambas intentan insertar.
-4. La primera insercion toma el lock de la fila en GiST.
+4. La primera inserción toma el lock de la fila en GiST.
 5. La segúnda espera y, al despertar, viola la restricción.
 6. La segúnda recibe un error de restricción, que la API traduce a 409.
 
@@ -141,7 +141,7 @@ RN-AGE-07 exige transacción única.
 1. El navegador pide `/api/v1/pacientes/{id}/salud`.
 2. La API valida la sesión.
 3. **Antes** de leer, escribe una fila en `AuditoríaAcceso` con usuario, recurso,
-   accion, fecha e IP.
+   acción, fecha e IP.
 4. Se descifra y devuelve el contenido.
 5. El registro de auditoría es append-only.
 

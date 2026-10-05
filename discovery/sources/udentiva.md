@@ -7,7 +7,7 @@
 
 ## Evidencia extraida del sitio
 
-Plataforma de gestion de clinicas odontologicas con gestion de pacientes, consultas, finanzas, turismo de salud y operaciones impulsadas por IA. Version para Argentina con precios en ARS. 'Comence Gratis' y video de presentacion.
+Plataforma de gestion de clínicas odontologicas con gestion de pacientes, consultas, finanzas, turismo de salud y operaciones impulsadas por IA. Version para Argentina con precios en ARS. 'Comence Gratis' y video de presentacion.
 
 ## Notas de analisis
 

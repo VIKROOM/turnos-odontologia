@@ -4,7 +4,7 @@
 > `discovery.no_evidenciado`, `discovery/verificacion-fuentes.md`.
 > Generado por `kb-creator` en modo silencioso (Mode A, `source: "ingest"`).
 >
-> Esta seccion existe para que lo que no sabemos quede escrito. Ningún valor
+> Esta sección existe para que lo que no sabemos quede escrito. Ningún valor
 > fue inventado para completar un campo.
 
 ## Inconsistencias detectadas
@@ -13,13 +13,13 @@
 **Documento A dice**: `discovery/sources/orbita.md` afirma que el competidor de
 mejor puntuación no publica agenda por sillón y que es el único del rubro en
 tenerla.
-**Documento B dice**: el informe de Discovery, en la correccion H-01, sostiene
+**Documento B dice**: el informe de Discovery, en la corrección H-01, sostiene
 justamente lo contrario: que el competidor de mejor puntuación sí ofrece agenda
 por sillón y es el único en hacerlo.
 **Impacto**: si alguien lee solo la nota de la fuente, conclude que la agenda por
 sillón es un hueco de mercado. Si lee el informe, concluye que ya esta cubierto.
-Las dos lecturas dan decisiónes de producto opuestas.
-**Resolucion propuesta**: la nota de la fuente tiene que quedar marcada como
+Las dos lecturas dan decisiones de producto opuestas.
+**Resolución propuesta**: la nota de la fuente tiene que quedar marcada como
 corregida o directamente reescribirla. El hallazgo H-01 y la nota no pueden
 seguir coexistiendo.
 
@@ -30,27 +30,27 @@ usan una matriz de 7 criterios con escala de 0 a 5.
 anterior, con puntajes sobre 10 y un total de 9,75.
 **Impacto**: los números de ambos documentos no son comparables. Un 4,88 sobre 5
 y un 9,75 sobre 10 parecen la misma calidad y no lo son.
-**Resolucion propuesta**: dejar 0-5 como única escala oficial en todo el
+**Resolución propuesta**: dejar 0-5 como única escala oficial en todo el
 proyecto y reescribir el checklist con esa escala.
 
-### IN-03 — El competidor mejor puntuado ya no coincide con la afirmacion de precio
+### IN-03 — El competidor mejor puntuado ya no coincide con la afirmación de precio
 **Documento A dice**: `discovery/sources/orbita.md` registra que no hay precio
 público verificable.
 **Documento B dice**: el relevamiento posterior confirmo que ese competidor si
 publica precios en su sitio.
 **Impacto**: usar el texto viejo para una justificación de precio en la propuesta
 comercial sería mostrar un dato que ya se sabe desactualizado.
-**Resolucion propuesta**: corregir la nota antes de usarla como fuente de precio.
+**Resolución propuesta**: corregir la nota antes de usarla como fuente de precio.
 
 ### IN-04 — La muestra no representa al mercado
 **Documento A dice**: el relevamiento cubre 19 sistemas.
-**Documento B dice**: los 19 tienen presencia digital, por lo sesgo de seleccion
+**Documento B dice**: los 19 tienen presencia digital, por lo sesgo de selección
 es inevitable: un consultorio que no aparece en internet no aparece en la
 muestra.
-**Impacto**: cualquier afirmacion del tipo "el mercado tiene N competidores" o
+**Impacto**: cualquier afirmación del tipo "el mercado tiene N competidores" o
 "ningún competidor hace X" solo es valida **dentro** de la muestra, no del
 mercado.
-**Resolucion propuesta**: toda conclusión de mercado debe llevar la coletilla
+**Resolución propuesta**: toda conclusión de mercado debe llevar la coletilla
 "en la muestra relevada". Es una restricción de lenguaje, no de análisis.
 
 ## Lo que Discovery no evidencio
@@ -59,7 +59,7 @@ Este bloque es el más importante del archivo. Son diez preguntas que el
 relevamiento **no pudo responder**, y que por lo tanto no pueden darse por
 certainas en ninguna parte del sistema.
 
-| # | Cuestion no evidenciada | Por que importa | Como se podria responder |
+| # | Cuestion no evidenciada | Por que importa | Como se podría responder |
 |---|------------------------|-----------------|-------------------------|
 | 1 | Facturación a obras sociales sin sistema previo: no se evaluó ningún caso | La integración agrega al menos seis meses | Contactar a un consultorio que facture a obra social |
 | 2 | Recordatorios automáticos: no hay medición pública de reducción de ausencias | Es la justificación del valor de esa funcionalidad | Medir ausencias con y sin recordatorio en un consultorio piloto |
@@ -89,15 +89,15 @@ evidencia, así que sigue sin ser una respuesta del relevamiento.
 | Alta | ¿Qué plazo mínimo de cancelación es aceptable en el rubro? | Sprint 2 | Producto + odontólogo |
 | Media | ¿Cómo se documenta el marco legal de las historias clínicas? | Sprint 2 | Legal |
 | Media | ¿Los precios se fijan en pesos o en dolares? | Lanzamiento | Producto |
-| Media | ¿Qué formato de exportacion necesita el paciente? | Sprint 3 | Producto |
+| Media | ¿Qué formato de exportación necesita el paciente? | Sprint 3 | Producto |
 | Media | ¿Se implementa la agenda responsive en el v1? | Sprint 3 | Equipo |
-| Media | ¿Qué tecnologias del curso se aceptan? | Sprint 1 | Equipo |
+| Media | ¿Qué tecnologías del curso se aceptan? | Sprint 1 | Equipo |
 | Baja | ¿Cómo se miden las metricas de éxito del sistema? | Post-lanzamiento | Producto |
 | Baja | ¿Qué limites de uso y quotas necesita un consultorio? | Post-lanzamiento | Equipo |
 
 ## Campos que la generación automática no pudo inferir
 
-Esta seccion la escribio `kb-creator` siguiendo la regla de baja confianza del
+Esta sección la escribio `kb-creator` siguiendo la regla de baja confianza del
 contrato: cuando un valor no se puede inferir con seguridad, se marca y se
 pregunta. **Nunca se inventa.**
 
@@ -115,7 +115,7 @@ inventarla.
 Cómo se cerró: el equipo decidió el stack explícitamente el **2026-10-03**, y la
 decisión quedó anotada como **DD-11** en `09_decisiones_y_supuestos.md`. La tabla de
 `02_descripcion_general.md` y la estructura de `08_arquitectura_propuesta.md` pasan
-a ser decisiónes, no propuestas.
+a ser decisiones, no propuestas.
 
 El riesgo que se había signaled sigue en pie y ahora hay que sostenerlo: PostgreSQL
 no es negociable, porque la restricción `EXCLUDE USING gist` que garantiza la
@@ -124,7 +124,7 @@ cambiar de base de datos, hay que volver a `04_modelo_de_datos.md`.
 
 ### `[DISCOVERY] system_type`
 
-Se infijo `web_app` con confianza alta, por dos senales concordantes: el
+Se inferí `web_app` con confianza alta, por dos senales concordantes: el
 odontólogo necesita una interfaz de uso diario y el paciente accede por web pública sin instalar nada. Se registra igual para que quede explícito.
 
 ### `[DISCOVERY] needs_infra`
@@ -136,7 +136,7 @@ de datos propios.
 
 ### `[DISCOVERY] scale`
 
-Se infijo `public_multi_user`: el odontólogo es un usuario único de uso diario y
+Se inferí `public_multi_user`: el odontólogo es un usuario único de uso diario y
 el paciente es público y no autenticado. Lo que este valor **no** implica es
 multi-tenant; ver DD-02.
 
@@ -144,8 +144,8 @@ multi-tenant; ver DD-02.
 
 En este orden:
 
-1. **Stack tecnologico.** Sin esto no se puede escribir ni una linea.
+1. **Stack tecnológico.** Sin esto no se puede escribir ni una línea.
 2. **Identidad y autenticación del paciente.** Ver PREG-02 y PREG-03.
 3. **Marco legal de la historia clínica.** Ver PREG-05 y PREG-06.
 4. **Consultorio piloto.** Ver PREG-01 y SU-03. Sin un piloto real, el resto de
-   las decisiónes son theory.
+   las decisiones son theory.

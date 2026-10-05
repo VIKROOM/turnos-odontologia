@@ -7,8 +7,8 @@
 
 ## Evidencia extraida del sitio
 
-Pagina publica de reservas, agenda y pacientes, avisos automaticos por correo, cancelacion y reprogramacion online. Segmentado por volumen de turnos.
+Pagina publica de reservas, agenda y pacientes, avisos automáticos por correo, cancelación y reprogramacion online. Segmentado por volumen de turnos.
 
 ## Notas de analisis
 
-El mas barato del conjunto y el unico que segmenta por cantidad de turnos. No declara historia clinica ni odontograma: es puramente agenda. El precio publicado es de promo de lanzamiento, no precio de lista estable.
+El mas barato del conjunto y el único que segmenta por cantidad de turnos. No declara historia clínica ni odontograma: es puramente agenda. El precio publicado es de promo de lanzamiento, no precio de lista estable.

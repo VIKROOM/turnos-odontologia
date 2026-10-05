@@ -8,7 +8,7 @@ Cada regla tiene un código `RN-{DOMINIO}-{NN}` para trazabilidad con las histor
 de usuario de `06_funcionalidades.md`.
 
 Las reglas marcadas con **Origen: Discovery** provienen literalmente del
-relevamiento. Las marcadas como **Propuesta** son decisiónes de diseño de este
+relevamiento. Las marcadas como **Propuesta** son decisiones de diseño de este
 sistema y no fueron verificadas contra el mercado.
 
 ## Dominio: Agenda (RN-AGE)
@@ -78,10 +78,10 @@ multisillón sin cambiar las reglas.
 - **RN-PRIV-02**: Los datos de salud se cifran en reposo y el cifrado se registra
   en el diseño. Origen: Propuesta.
 - **RN-PRIV-03**: Todo acceso a un historial clínico escribe una fila en
-  `AuditoríaAcceso` con usuario, recurso, accion, fecha e IP. Origen: Discovery.
+  `AuditoríaAcceso` con usuario, recurso, acción, fecha e IP. Origen: Discovery.
 - **RN-PRIV-04**: Los datos personales del paciente se anulan, no se borran, para
   preservar la trazabilidad de los turnos historicos. Origen: Propuesta.
-- **RN-PRIV-05**: La exportacion de datos que realiza el odontólogo también se
+- **RN-PRIV-05**: La exportación de datos que realiza el odontólogo también se
   audita. Origen: Propuesta.
 - **RN-PRIV-06**: El asístente IA no recibe el historial clínico. Sólo recibe
   disponibilidad. Origen: Propuesta. Es una decisión deliberada para acotar la
@@ -114,4 +114,4 @@ No son codificables todavía, pero condicionan el diseño:
 | El odontólogo unipersonal no tiene tiempo para administrar un sistema complejo | Toda la UI: pocas pantallas, cero configuración inicial obligatoria |
 | El paciente odia llamar por teléfono | El paciente no tiene cuenta: la reserva se completa en menos de un minuto |
 | Los software del rubro son todos feos y se crítican entre sí | Sin marcas de terceros en la interfaz, sin comparativas visibles al paciente |
-| La agenda electrónica ya la ofrecen los 19 sistemas relevados | La agenda no se presenta como innovacion; ver DD-06 |
+| La agenda electrónica ya la ofrecen los 19 sistemas relevados | La agenda no se presenta como innovación; ver DD-06 |

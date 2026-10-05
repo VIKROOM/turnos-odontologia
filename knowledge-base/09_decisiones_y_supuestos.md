@@ -3,7 +3,7 @@
 > Fuente: `.active-orchestrator-state.json` → `discovery`, `docs/discovery/informe-discovery.md`.
 > Generado por `kb-creator` en modo silencioso (Mode A, `source: "ingest"`).
 >
-> Distincion importante: las **decisiónes** son elecciones tomadas para este
+> Distinción importante: las **decisiones** son elecciones tomadas para este
 > sistema. Los **supuestos** son cosas que se asumen porque ningún documento
 las confirma. Un supuesto marcado como
 riesgo alto es una bomba con mecha.
@@ -37,7 +37,7 @@ cliente y soporte, todo eso para un cliente que no existe todavía.
 **Trade-offs aceptados**: si dos consultorios quieren compartir sistema, hay que
 migrar. `needs_infra` sigue siendo `true` por otros motivos, no por multi-tenancy.
 
-### DD-03 — El recurso asígnable es el eje del modelo
+### DD-03 — El recurso asignable es el eje del modelo
 **Decisión**: el turno cuelga de un recurso (el sillón), no de un profesional ni
 de un consultorio.
 **Contexto**: es la forma en que describen su operación los 19 sistemas
@@ -54,7 +54,7 @@ paga con una tabla de una fila.
 teléfono**. Pedirle que cree una cuenta con password contradice el objetivo.
 **Alternativas consideradas**: (a) cuenta de paciente; (b) link firmado por
 turno; (c) turno confirmado por el consultorio a mano.
-**Justificación**: (b) elimina la friccion sin perder trazabilidad.
+**Justificación**: (b) elimina la fricción sin perder trazabilidad.
 **Trade-offs aceptados**: no hay historial del lado del paciente. Para pedir un
 turno anterior tiene que usar el enlace que recibio. Si lo perdio, llama.
 
@@ -90,10 +90,10 @@ simple. Se asume el costo.
 **Decisión**: la IA solo consulta disponibilidad. Nunca recibe ni devuelve el
 historial clínico.
 **Contexto**: la Ley 25.326 clasifica el historial clínico como dato sensible, y
-mandarlo a un tercero sin acuerdo de tratamiento es una exposicion real.
+mandarlo a un tercero sin acuerdo de tratamiento es una exposición real.
 **Alternativas consideradas**: (a) IA con contexto clínico completo; (b) IA con
 solo disponibilidad; (c) sin IA en el v1.
-**Justificación**: el beneficio de la IA esta en reducir la friccion de agendar,
+**Justificación**: el beneficio de la IA esta en reducir la fricción de agendar,
 no en interpretar clínica.
 **Trade-offs aceptados**: la IA no puede sugerir prácticas ni anticipar lo que
 necesita el paciente.
@@ -162,22 +162,22 @@ volver a `04_modelo_de_datos.md` y a DD-05 antes de aceptar el cambio.
 ## Supuestos inferidos
 
 ### SU-01 — El segmento inicial es el profesional unipersonal
-**Supuesto**: el odontólogo que atiende solo y no tiene sistema de gestióne.
+**Supuesto**: el odontólogo que atiende solo y no tiene sistema de gestiona.
 **Origen**: `discovery.casos_de_uso`.
 **Riesgo si es falso**: alto. Si el cliente real es un consultorio con secretaría
 y varios profesionales, casi todos los roles y pantallas cambian.
 **Cómo validar**: una entrevista con un consultorio que tenga dos o más profesionales.
 
-### SU-02 — El paciente completa un formulario web sin asístencia
+### SU-02 — El paciente completa un formulario web sin asistencia
 **Supuesto**: un paciente con teléfono y acceso a internet puede elegir horario y
 cargar sus datos solo.
 **Origen**: `discovery.casos_de_uso`.
-**Riesgo si es falso**: medio. Si una parte de los pacientes necesita asístencia
+**Riesgo si es falso**: medio. Si una parte de los pacientes necesita asistencia
 telefonica, el canal no se puede eliminar del todo.
 **Cómo validar**: prueba de usabilidad con 5 a 10 pacientes reales.
 
 ### SU-03 — La migración de la agenda actual es el principal freno
-**Supuesto**: el odontólogo hoy gestióna sus turnos en Excel, WhatsApp o cuaderno,
+**Supuesto**: el odontólogo hoy gestiona sus turnos en Excel, WhatsApp o cuaderno,
 y ese es el punto de dolor.
 **Origen**: `discovery.riesgos`.
 **Riesgo si es falso**: alto. Si el problema real es la falta de pacientes y no
@@ -212,7 +212,7 @@ cargar la disponibilidad de cada uno.
 este construido.
 **Cómo validar**: observar el uso real en las primeras cuatro semanas.
 
-### SU-08 — La asístencia IA es un diferencial y no una distractor
+### SU-08 — La asistencia IA es un diferencial y no una distractor
 **Supuesto**: la IA aporta valor real al paciente que agenda.
 **Origen**: `discovery.funcionalidades`.
 **Riesgo si es falso**: alto. El relevamiento no encontró ningún competidor con

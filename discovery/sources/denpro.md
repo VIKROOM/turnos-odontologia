@@ -7,7 +7,7 @@
 
 ## Evidencia extraida del sitio
 
-Turnos y calendario, pacientes, odontograma FDI, recetas, historia clinica. Planes Basic/Team con 30 dias de prueba. Soporte telefonico +34 672 182 743 (Espana) y declaracion de cifrado AES-256 + datacentros ISO 27001 en la UE + cumplimiento GDPR.
+Turnos y calendario, pacientes, odontograma FDI, recetas, historia clínica. Planes Basic/Team con 30 dias de prueba. Soporte telefonico +34 672 182 743 (Espana) y declaracion de cifrado AES-256 + datacentros ISO 27001 en la UE + cumplimiento GDPR.
 
 ## Notas de analisis
 

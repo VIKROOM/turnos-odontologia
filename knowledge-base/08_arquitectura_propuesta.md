@@ -54,7 +54,7 @@ turnos-odontologia/
 └── docs/discovery/              # informe de Discovery
 ```
 
-Decision de layout: `domain/` no importa nada de `infrastructure/`. Esa regla
+Decisión de layout: `domain/` no importa nada de `infrastructure/`. Esa regla
 es la que permite que el motor de disponibilidad se pruebe sin base de datos ni
 sin levantar el servidor.
 
@@ -76,7 +76,7 @@ izquierda y abiertos por la derecha, `[inicio, fin)`.
 
 Ese mismo criterio se aplica en la base de datos con `tstzrange(inicio, fin)`,
 que ya es semiabierto por defecto. La lógica del servidor y la restricción de la
-base coinciden porque comparten la misma convencion.
+base coinciden porque comparten la misma convención.
 
 ## Seguridad
 
@@ -93,21 +93,21 @@ base coinciden porque comparten la misma convencion.
 | Transport | TLS obligatorio entre navegador y servidor | — |
 
 Sobre el token del paciente: se genera con fuente criptografica, no con
-`random()`. Un token adivinable sería un TOKER de acceso a una cita medica de
+`random()`. Un token adivinable sería un token de acceso a una cita médica de
 otra persona. El test de seguridad correspondiente es que el token tenga al menos
 128 bits de entropia real, medidos sobre las implementaciones que se usen.
 
 ## Varíables de entorno
 
-| Varíable | Descripcion | Ejemplo | Sensible |
+| Varíable | Descripción | Ejemplo | Sensible |
 |----------|-------------|---------|----------|
-| `DATABASE_URL` | Conexion a Postgres | `postgresql://user:pass@db:5432/turnos` | Si |
+| `DATABASE_URL` | Conexión a Postgres | `postgresql://user:pass@db:5432/turnos` | Si |
 | `SECRET_KEY` | Firma de los JWT | `generar con openssl rand -hex 32` | Si |
 | `ENCRYPTION_KEY` | Cifrado de datos de salud | `generar con openssl rand -hex 32` | Si |
 | `TOKEN_TTL_HOURS` | Duración de la sesión | `8` | No |
 | `CANCELLATION_MIN_HOURS` | Plazo mínimo de cancelación | `24` | No |
 | `COOKIE_SECURE` | Exigir HTTPS en la cookie | `true` | No |
-| `APP_ENV` | Entorno de ejecucion | `production` | No |
+| `APP_ENV` | Entorno de ejecución | `production` | No |
 | `LOG_LEVEL` | Nivel de log | `INFO` | No |
 
 La separación entre `SECRET_KEY` y `ENCRYPTION_KEY` es intencional: son

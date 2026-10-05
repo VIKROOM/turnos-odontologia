@@ -18,7 +18,7 @@ documentos existentes. `source: "ingest"`.
 | [06_funcionalidades.md](06_funcionalidades.md) | 7 épicas, 18 historias de usuario con criterios de aceptación |
 | [07_flujos_principales.md](07_flujos_principales.md) | 8 flujos extremo a extremo, incluido el intento de doble reserva |
 | [08_arquitectura_propuesta.md](08_arquitectura_propuesta.md) | Patrones, estructura de directorios, seguridad, variables de entorno |
-| [09_decisiónes_y_supuestos.md](09_decisiónes_y_supuestos.md) | 8 decisiónes documentadas y 8 supuestos con su riesgo |
+| [09_decisiones_y_supuestos.md](09_decisiones_y_supuestos.md) | 8 decisiones documentadas y 8 supuestos con su riesgo |
 | [10_preguntas_abiertas.md](10_preguntas_abiertas.md) | 4 inconsistencias, 10 puntos no evidenciados, 12 preguntas priorizadas |
 
 ## Quick Start para Desarrolladores

@@ -93,7 +93,7 @@ Explícitamente fuera del MVP y presente en el informe como "posterior":
 ## Fuera de alcance
 
 - Diagnóstico, indicación clínica y prescripción.
-- Integraciónes obligatorias con terceros en v1: **Discovery no encontró dependencias externas obligatorias**.
+- Integraciones obligatorias con terceros en v1: **Discovery no encontró dependencias externas obligatorias**.
 - Soporte de obras sociales y facturación a terceros.
 - Multi-tenant desde el día uno (ver `09_decisiones_y_supuestos.md`, DD-02).
 

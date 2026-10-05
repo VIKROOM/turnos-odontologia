@@ -7,7 +7,7 @@
 
 ## Evidencia extraida del sitio
 
-Historia clinica digital, odontograma interactivo, agenda de turnos con auto-agendado via link, presupuestos en PDF, cobros y cuentas por cobrar en pesos argentinos. Declara explicitamente que NO gestiona obras sociales ni prepagas, y que NO emite factura electronica AFIP. No requiere tarjeta para la prueba.
+Historia clínica digital, odontograma interactivo, agenda de turnos con auto-agendado via link, presupuestos en PDF, cobros y cuentas por cobrar en pesos argentinos. Declara explicitamente que NO gestiona obras sociales ni prepagas, y que NO emite factura electrónica AFIP. No requiere tarjeta para la prueba.
 
 ## Notas de analisis
 

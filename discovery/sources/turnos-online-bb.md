@@ -11,4 +11,4 @@ Software de turnos online contratado por profesionales y centros de salud. El pa
 
 ## Notas de analisis
 
-Producto minimo y de tecnologia aparentemente antigua. Sin historia clinica, sin odontograma, sin precio. Util como referencia de la categoria 'agenda online basica' que ya existia antes de la ola actual.
+Producto minimo y de tecnologia aparentemente antigua. Sin historia clínica, sin odontograma, sin precio. Util como referencia de la categoría 'agenda online básica' que ya existia antes de la ola actual.

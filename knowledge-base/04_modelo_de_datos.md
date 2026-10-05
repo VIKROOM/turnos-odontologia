@@ -5,12 +5,12 @@
 
 ## Dominios
 
-| Dominio | Descripcion |
+| Dominio | Descripción |
 |---------|-------------|
 | Agenda | Disponibilidad, reservas, bloqueos de franja y duraciones por práctica |
-| Pacientes | Datos de contacto, consentimiento y relacion con sus turnos |
+| Pacientes | Datos de contacto, consentimiento y relación con sus turnos |
 | Salud | Odontograma básico y registro de atenciones |
-| Administracion | Usuario único, prácticas, configuración del consultorio |
+| Administración | Usuario único, prácticas, configuración del consultorio |
 | Auditoría | Registro de accesos a datos sensibles y de operaciónes administrativas |
 
 ## ERD (Entity Relationship Diagram)
@@ -103,8 +103,11 @@ Relaciones clave:
 - `fin` timestamptz, NOT NULL
 - `motivo` varchar(120), nullable
 - CHECK (`fin` > `inicio`)
-- Misma restricción de exclusión que `Turno`, compartida por `recurso_id`.
 - Índice: (`recurso_id`, `inicio`)
+- **Restricción de exclusión (NO resuelto, ver abajo):** esta tabla comparte
+  `recurso_id` con `Turno`, pero una restricción `EXCLUDE` de PostgreSQL es
+  **por tabla** y no puede cubrir las dos. Ver «Deuda de diseño: la exclusión
+  entre `Turno` y `Bloqueo`».
 
 ### Paciente
 - `id` UUID PK
@@ -167,7 +170,7 @@ Es la decisión de datos más importante del proyecto, así que va explícita.
 El problema: si la validación de disponibilidad vive solo en el backend, dos
 peticiones simultaneas pueden leer el mismo slot libre y escribir dos turnos.
 
-La solucion: que la base de datos rechace el solapamiento.
+La solución: que la base de datos rechace el solapamiento.
 
 ```sql
 EXCLUDE USING gist (
@@ -183,11 +186,67 @@ Efectos:
    recibe un error de restricción y la API responde con un conflicto.
 2. El test que valida esto es de integración contra Postgres real, no unitario.
 3. El motor de disponibilidad de `05_reglas_de_negocio.md` sigue siendo
-   necesario, pero como optimizacion y como experiencia de usuario, no como
+   necesario, pero como optimización y como experiencia de usuario, no como
    garantia de integridad.
 
-Costo aceptado: Postgres deja de ser reemplazable por una base relacional mas
+Costo aceptado: Postgres deja de ser reemplazable por una base relacional más
 simple. Ver DD-05.
+
+## Deuda de diseño: la exclusión entre `Turno` y `Bloqueo`
+
+> **Estado: abierta. No decidida. Requiere decisión del equipo antes de
+> implementar el turno y el bloqueo.** Registrada el 2026-10-05 durante la
+> verificación de la fundación, al leer este modelo contra lo que PostgreSQL
+> permite hacer.
+
+### El problema
+
+Este modelo dice que `Turno` y `Bloqueo` compiten por el mismo `recurso_id` y que
+ambos la resuelven con una restricción de exclusión. **Eso no es implementable
+como está escrito.**
+
+Una restricción `EXCLUDE USING gist` pertenece a **una sola tabla**. No puede
+abarcar `Turno` y `Bloqueo` a la vez, porque son dos tablas distintas con dos
+conjuntos de índices separados. La consecuencia es la siguiente:
+
+```sql
+-- Turno confirmado: 10:00 a 10:30 en el sillón 1  -> se guarda
+-- Bloqueo del odontólogo: 10:15 a 11:00 en el sillón 1 -> TAMBIÉN se guarda
+```
+
+Las dos escrituras pasan. La base no dice nada, porque cada restricción solo ve
+su propia tabla.
+
+Por eso el modelo debe decir que `Bloqueo` comparte el `recurso_id` con `Turno` y
+**que el conflicto entre ambos es responsabilidad de la aplicación**, no de una
+restricción declarativa. Y por eso la garantía de DD-05 es **parcial**: cubre
+turno contra turno, que es el caso que RN-AGE-03 describe literalmente, pero no
+cubre turno contra bloqueo, que RN-AGE-05 y US-004-CA-1 dan por sentado.
+
+### Las dos salidas
+
+| Opción | Cómo funciona | Costo |
+|--------|---------------|-------|
+| **A — Tabla única de reserva de agenda** | `Turno` y `Bloqueo` pasan a ser filas de una tabla `ReservaAgenda` con un campo discriminador (`tipo`). La restricción `EXCLUDE` vive **una sola vez**, sobre esa tabla. Los datos de `Turno` (paciente, práctica, token) quedan en una tabla aparte relacionada | Reescritura del esquema. `Turno` deja de ser una tabla y pasa a ser un detalle de la reserva. Es la solución que un motor de agenda real usa |
+| **B — Trigger de verificación cruzada** | Se conserva el esquema actual y se agrega un trigger `AFTER INSERT OR UPDATE` sobre ambas tablas que consulta la tabla hermana y aborta si encuentra solapamiento | Dos triggers que se mantienen sincronizados. Un trigger mal escrito es un bug silencioso: la garantía depende de código, no del declarativo |
+
+**Cuál usar no es una decisión de kb-creator.** Es una decisión de diseño con
+consecuencias distintas sobre el modelo de datos, el modelo de consultas y los
+tests, y por eso queda escrita acá para que el `design.md` del change la tome de
+forma explícita en Propose, en lugar de resolverla por omisión durante Apply.
+
+### Lo que esto obliga igual
+
+- La validación de disponibilidad de `05_reglas_de_negocio.md` tiene que seguir
+  existiendo: es la que da la experiencia de usuario y la que evita el viaje de
+  ida y vuelta a la base para que el conflicto se rechace. La exclusión nunca fue
+  la primera línea, fue la red.
+- El test de solapamiento tiene que cubrir **los dos casos por separado**: turno
+  contra turno, y turno contra bloqueo. Un test que solo cubre el primero deja el
+  segundo sin verificar, que es exactamente el falso positivo que RN-AGE-03
+  busca evitar. Ver DD-10.
+- Cualquiera de las dos opciones conserva el requisito duro de PostgreSQL, así
+  que DD-05 no se ve afectada.
 
 ## Seed data inicial
 
@@ -195,7 +254,7 @@ simple. Ver DD-05.
 |-------|------------------|
 | Usuario | Un odontólogo, email y password definidos por el que instala |
 | Recurso | Un sillón, activo |
-| Práctica | Consulta, Limpieza, Obturacion, Extraccion, Radiografia de pano |
+| Práctica | Consulta, Limpieza, Obturación, Extracción, Radiografia de pano |
 | PracticaDuracion | Una fila por cada práctica con el sillón único |
 | DisponibilidadSemanal | Las franjas que defina el odontólogo al instalar |
 | HistorialClinico | Ninguna: se crea en el primer turno |

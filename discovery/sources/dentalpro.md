@@ -7,7 +7,7 @@
 
 ## Evidencia extraida del sitio
 
-Declara +500 profesionales activos, 98% satisfaccion, 3x mas eficiencia. Agenda diaria/semanal/mensual con sincronizacion con Google Calendar. Doble odontograma (inicial y de tratamiento). Historial clinico con linea de tiempo, carga de imagenes y estudios. Registro de pagos, envio automatico de link de pago. Recordatorios por WhatsApp. Reportes y metricas. Rol secretaria incluido. Asistente IA que hace briefing diario con alertas clinicas.
+Declara +500 profesionales activos, 98% satisfaccion, 3x mas eficiencia. Agenda diaria/semanal/mensual con sincronización con Google Calendar. Doble odontograma (inicial y de tratamiento). Historial clínico con linea de tiempo, carga de imagenes y estudios. Registro de pagos, envio automatico de link de pago. Recordatorios por WhatsApp. Reportes y metricas. Rol secretaria incluido. Asistente IA que hace briefing diario con alertas clínicas.
 
 ## Notas de analisis
 

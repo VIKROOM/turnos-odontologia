@@ -92,12 +92,12 @@ administración de múltiples profesionales o sedes. El unipersonal es
 > error, pero **no es la matriz que va en el entregable**.
 >
 > **La matriz oficial, con los pesos de la consigna (25/20/15/15/10/10/5) y escala
-> 0–5, está en [`docs/discovery/informe-discovery.md`](../docs/discovery/informe-discovery.md)
-> §B y en el PDF §B.** Ese es el entregable. La matriz oficial se reproduce á también en el [checklist de once puntos](checklist-discovery.md) de esta misma carpeta.
+> 0–5, está en [`informe-discovery.md`](informe-discovery.md)
+> §B y en el PDF §B.** Ese es el entregable. La matriz oficial se reproduce también en el [checklist de once puntos](checklist-discovery.md) de esta misma carpeta.
 >
 > Además, esta matriz estaba construida sobre cuatro datos que resultaron
 > falsos. Ver la tabla de hallazgos en
-> [`verificacion-fuentes.md`](verificacion-fuentes.md) y §E.1 del informe.
+> [`discovery/verificacion-fuentes.md`](../../discovery/verificacion-fuentes.md) y §E.1 del informe.
 >
 > **Por qué importa:** con los pesos correctos el ranking cambia. La versión
 > inventada ponía a DentalSaaS primero (4,80) y a Órbita séptimo (3,55); la

@@ -1,7 +1,7 @@
 # Funcionalidades
 
 > Fuente: `.active-orchestrator-state.json` → `discovery.casos_de_uso`,
-> `discovery.funcionalidades`, `docs/discovery/informe-discovery.md` seccion D.4.
+> `discovery.funcionalidades`, `docs/discovery/informe-discovery.md` sección D.4.
 > Generado por `kb-creator` en modo silencioso (Mode A, `source: "ingest"`).
 
 Organizadas por épica y luego por historia de usuario (`US-NNN`). Los criterios
@@ -250,5 +250,5 @@ están decisiónadas como **no hacer** en esta versión.
 | Estudios de imagen de diagnóstico | `01_vision_y_objetivos.md`, alcance v1 |
 | Multi-usuario, roles y permisos | `03_actores_y_roles.md`, matriz RBAC |
 | Integración con obras sociales | `02_descripcion_general.md`, integraciones |
-| Aplicacion móvil nativa | `01_vision_y_objetivos.md`, alcance v1 |
-| Importacion masíva de historia clínica | `01_vision_y_objetivos.md`, alcance v1 |
+| Aplicación móvil nativa | `01_vision_y_objetivos.md`, alcance v1 |
+| Importación masíva de historia clínica | `01_vision_y_objetivos.md`, alcance v1 |

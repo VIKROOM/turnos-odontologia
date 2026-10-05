@@ -7,7 +7,7 @@
 
 ## Evidencia extraida del sitio
 
-Segun su propio blog: agenda online, historia clinica, odontograma interactivo, presupuestos y cobros en cuotas, todo desde un mismo lugar. Articulo de guia sobre sistema de turnos online publicado 2026-07-08, autoria Ana Fernandez (CEO y fundadora).
+Segun su propio blog: agenda online, historia clínica, odontograma interactivo, presupuestos y cobros en cuotas, todo desde un mismo lugar. Articulo de guia sobre sistema de turnos online publicado 2026-07-08, autoria Ana Fernandez (CEO y fundadora).
 
 ## Notas de analisis
 

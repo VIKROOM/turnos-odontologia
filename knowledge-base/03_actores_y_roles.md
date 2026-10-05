@@ -5,13 +5,13 @@
 
 ## Actores del sistema
 
-| Actor | Descripcion | Como interactua |
+| Actor | Descripción | Como interactua |
 |-------|-------------|------------------|
 | Odontólogo (dueño-operador) | Profesional independiente que atiende en su propio consultorio. Es a la vez dueno, operador y único usuario administrativo del sistema. | Sesión propia. Define disponibilidad, practices, bloqueos; ve toda la agenda; accede a fichas e historias clínicas. |
 | Paciente | Persona que busca un turno. No es usuario registrado: no tiene contraseña ni cuenta en el v1. | Entra por enlace público, elige horario, deja sus datos una sola vez y recibe un enlace firmado para cancelar o reprogramar. |
-| Asistente IA | Asistente de-orientación al paciente dentro del flujo de reserva. No decide disponibilidad ni confirma turnos por su cuenta. | Responde consultas de disponibilidad y guia la carga de datos. Toda reserva que produce pasa por las mismas reglas de negocio que una manual. |
+| Asistente IA | Asistente de-orientación al paciente dentro del flujo de reserva. No decide disponibilidad ni confirma turnos por su cuenta. | Responde consultas de disponibilidad y guía la carga de datos. Toda reserva que produce pasa por las mismas reglas de negocio que una manual. |
 
-Sobre la asístencia IA con datos de salud: aplica la Ley 25.326 de Proteccion de
+Sobre la asistencia IA con datos de salud: aplica la Ley 25.326 de Protección de
 Datos Personales, que clasifica el historial clínico como **dato sensible**. Ver
 RN-PRIV-01 y el alcance real en `10_preguntas_abiertas.md`, PREG-05.
 
@@ -30,7 +30,7 @@ que no existe separación de roles todavía.
 | Odontólogo | Pacientes | Si | Si | Si | Si |
 | Odontólogo | Historia clínica | Si | Si | Si | Si |
 | Odontólogo | Datos de contacto del paciente | Si | Si | Si | No |
-| Odontólogo | Exportacion de datos | Si | Si | No | No |
+| Odontólogo | Exportación de datos | Si | Si | No | No |
 | Odontólogo | Usuarios y roles | No | Si | No | No |
 | Paciente | Su propio turno (via token) | Si | Si | Si | Si |
 | Paciente | Su propia ficha | No | No | No | No |
@@ -50,7 +50,7 @@ Tres filas de esa tabla son restricciónes deliberadas y no olvidos:
 Accesibles sin autenticación. La lista es corta a propósito: cada ruta pública es
 superficie de ataque sobre datos de salud.
 
-| Ruta | Método | Que expone | Proteccion |
+| Ruta | Método | Que expone | Protección |
 |------|--------|-----------|------------|
 | `/` | GET | Landing con info pública del consultorio | Ninguna |
 | `/reservar` | GET | Formulario de reserva | Token de práctica en query |

@@ -7,7 +7,7 @@
 
 ## Evidencia extraida del sitio
 
-Agenda por profesional y sede, programar/reprogramar/cancelar. Recordatorios por WhatsApp con CONFIRMAR/CANCELAR que actualizan la agenda solos. Ficha del paciente con estudios y archivos. Reserva online 24/7 por especialidad y ubicacion. Obras sociales y copagos configurados por profesional. Facturacion electronica por ARCA para Monotributo o RI. Asistente conversacional en linea que toma el turno por chat. 100% navegador, sin instalar.
+Agenda por profesional y sede, programar/reprogramar/cancelar. Recordatorios por WhatsApp con CONFIRMAR/CANCELAR que actualizan la agenda solos. Ficha del paciente con estudios y archivos. Reserva online 24/7 por especialidad y ubicacion. Obras sociales y copagos configurados por profesional. Facturacion electrónica por ARCA para Monotributo o RI. Asistente conversacional en linea que toma el turno por chat. 100% navegador, sin instalar.
 
 ## Notas de analisis
 
