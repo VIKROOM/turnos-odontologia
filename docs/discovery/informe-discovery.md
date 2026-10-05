@@ -255,8 +255,30 @@ No se eligen por ser los mejores en funcionalidad, sino por tener el mejor dise�
 
 El alcance de la v1 se sostiene porque es una **renuncia explícita**, no una carencia:
 
-- **Sí**: autogendamiento 24/7, agenda por sillón con duración por consulta configurable, sin solapamientos garantizado en la capa de datos, bloqueo y protección de franjas, lista de espera y sobreturnos, cancelación anticipada configurable, historia clínica mínima, roles, auditoría de accesos, exportación total y reportes en CSV.
+- **Sí**: autogendamiento 24/7, agenda por sillón con duración por consulta configurable, sin solapamientos garantizado en la capa de datos, bloqueo y protección de franjas, cancelación anticipada configurable, historia clínica mínima, roles, auditoría de accesos, exportación total y reportes en CSV.
 - **No**: obras sociales, prepagas, facturación electrónica, receta electrónica, liquidaciones, laboratorio, inventario, stock, marketing, multiprotocolo y multisede.
+- **No en la v1, aunque solve el problema declarado**: lista de espera y sobreturnos. Ver la corrección H-07 abajo.
+
+> **Corrección aplicada el 2026-10-05 (H-07).** La lista de «Sí» de esta
+> sección incluía «lista de espera y sobreturnos», lo que contradecía a D.3,
+> que las ponía en la tabla **«Para etapas posteriores»**. Se quitaron del «Sí».
+>
+> La evidencia dice que D.3 era la correcta: `06_funcionalidades.md` —el
+> documento que traduce alcance a historias de usuario y es el insumo real de
+> la implementación— **no menciona ninguna de las dos**, y
+> `.active-orchestrator-state.json` las tiene en `funcionalidades_opcionales`.
+>
+> **Lo que esta corrección no resuelve.** El problema que el proyecto declara
+> atacar es el **ausentismo** (§A, y el riesgo «AUSENCIA DE RECORDATORIOS POR
+> WHATSAPP»), y las dos funcionalidades que lo atacan de verdad son justamente
+> las que quedan afuera. D.3 resuelve la tensión por su cuenta: la v1 recupera
+> slots cancelados con cancelación anticipada y bloqueos, y el disparo al
+> paciente llega en la v2 junto con WhatsApp, que es el canal que la lista de
+> espera necesita. **Es una renuncia de alcance, no una solución al
+> ausentismo.** Si el equipo quiere que la v1 lo resuelva, tiene que meterlas y
+> entonces D.3 es la que está mal. No se resuelve acá porque es una decisión de
+> producto y esta auditoría es documental. Queda planteada en
+> `knowledge-base/10_preguntas_abiertas.md`.
 
 Esta frontera ya la usan con éxito Dentatools —declarando que no hace obras sociales ni AFIP— y es coherente con Consultorio Digital. No es una limitación: es el argumento de venta.
 
