@@ -15,33 +15,42 @@ mejor puntuación no publica agenda por sillón y que es el único del rubro en
 tenerla.
 **Documento B dice**: el informe de Discovery, en la corrección H-01, sostiene
 justamente lo contrario: que el competidor de mejor puntuación sí ofrece agenda
-por sillón y es el único en hacerlo.
-**Impacto**: si alguien lee solo la nota de la fuente, conclude que la agenda por
-sillón es un hueco de mercado. Si lee el informe, concluye que ya esta cubierto.
-Las dos lecturas dan decisiones de producto opuestas.
-**Resolución propuesta**: la nota de la fuente tiene que quedar marcada como
-corregida o directamente reescribirla. El hallazgo H-01 y la nota no pueden
-seguir coexistiendo.
+por sillón (con choque imposible) y no es exclusivo suyo.
+**Impacto**: si alguien lee solo la nota de la fuente, concluye que la agenda por
+sillón es un hueco de mercado. Si lee el informe, concluye que ya está cubierto.
+**Resolución propuesta**: la nota de la fuente debe quedar marcada como corregida
+(o reescribirse), dado que H-01 y la nota no pueden coexistir.
+**Estado**: **[RESUELTO — 2026-10-05, protocolo Ajustar, H-01]**. El informe
+de Discovery documenta la corrección; la fuente original se conserva como registro
+histórico y la verificación queda registrada en `discovery/verificacion-fuentes.md`
+y en `docs/discovery/informe-discovery.md`.
 
 ### IN-02 — Dos escalas de puntuación conviviendo en los artefactos
 **Documento A dice**: el informe de Discovery y `.active-orchestrator-state.json`
 usan una matriz de 7 criterios con escala de 0 a 5.
-**Documento B dice**: `docs/discovery/checklist-discovery.md` conserva la matriz
-anterior, con puntajes sobre 10 y un total de 9,75.
-**Impacto**: los números de ambos documentos no son comparables. Un 4,88 sobre 5
-y un 9,75 sobre 10 parecen la misma calidad y no lo son.
-**Resolución propuesta**: dejar 0-5 como única escala oficial en todo el
-proyecto y reescribir el checklist con esa escala.
+**Documento B dice**: `docs/discovery/checklist-discovery.md` conservaba la matriz
+anterior, con puntajes sobre 10 y un total de 9,75 (versión previa al ajuste).
+**Impacto**: los números no eran comparables. Un 4,88 sobre 5 y un 9,75 sobre 10
+parecían la misma calidad y no lo son.
+**Resolución**: 0-5 es la única escala oficial en todo el proyecto. El
+`checklist-discovery.md` actualiza la referencia a la matriz oficial de 0-5,
+marcando la matriz inventada como superada dentro de `<details>`.
+**Estado**: **[RESUELTO — 2026-10-05, protocolo Ajustar, H-05]**. La matriz
+oficial está en `docs/discovery/informe-discovery.md` §B, con pesos
+25/20/15/15/10/10/5.
 
 ### IN-03 — El competidor mejor puntuado ya no coincide con la afirmación de precio
-**Documento A dice**: `discovery/sources/orbita.md` registra que no hay precio
+**Documento A dice**: `discovery/sources/orbita.md` registraba que no había precio
 público verificable.
-**Documento B dice**: el relevamiento posterior confirmo que ese competidor si
-publica precios en su sitio.
-**Impacto**: usar el texto viejo para una justificación de precio en la propuesta
-comercial sería mostrar un dato que ya se sabe desactualizado.
-**Resolución propuesta**: corregir la nota antes de usarla como fuente de precio.
-
+**Documento B dice**: el relevamiento posterior confirmó que ese competidor sí
+publica precios en su sitio (plan Consultorio desde USD 25/mes).
+**Impacto**: usar el texto viejo para justificar precio sería mostrar un dato
+desactualizado.
+**Resolución**: corregido en el informe (H-06). La verificación manual de fuentes
+confirma el precio público publicado por Órbita.
+**Estado**: **[RESUELTO — 2026-10-05, protocolo Ajustar, H-06]**. Ver
+`docs/discovery/informe-discovery.md` (D y E) y
+`discovery/verificacion-fuentes.md` para el registro de lo verificado.
 ### IN-04 — La muestra no representa al mercado
 **Documento A dice**: el relevamiento cubre 19 sistemas.
 **Documento B dice**: los 19 tienen presencia digital, por lo sesgo de selección
