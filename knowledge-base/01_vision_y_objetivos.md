@@ -49,8 +49,12 @@ Estos son los que justifican el alcance de `06_funcionalidades.md`:
 2. **Confianza como estándar, no como módulo.** Exportación total y auditoría de
    accesos a historia clínica están en la lista de deseos del sector, pero no
    en el producto base de los líderes.
-3. **Cero integraciones obligatorias.** Solo 1 de 19 gestiona obras sociales o
-   prepagas. Instalar el sistema sin depender de Meta, AFIP ni de un proveedor
+3. **Cero integraciones obligatorias.** Solo **1 de 19** tiene un producto de
+   control prestacional para gerenciadoras de obras sociales (Bilog), y solo
+   **8 de 19** registran obras sociales o convenios como dato del paciente. Son
+   dos mediciones distintas y la ambigüedad importa: para la tesis de «cero
+   integraciones obligatorias» pesa la segunda, y aun así deja 8 de 19 sin
+   cubrir. Instalar el sistema sin depender de Meta, AFIP ni de un proveedor
    externo de historia clínica es una posición, no una ausencia.
 4. **Precio en pesos, sin exposición cambiaria.** La referencia de precio del
    segmento (Dentatools, $30.000) está en pesos; la del líder (Órbita, USD 25) está

@@ -134,9 +134,26 @@ Discovery. El dato que sostiene el proyecto:
 | Capacidad | Sistemas que la ofrecen |
 |-----------|--------------------------|
 | Agenda electrónica | 19 de 19 |
-| Recordatorios automáticos | 13 de 19 |
-| Historia clínica electrónica | 17 de 19 |
-| Recordatorios por WhatsApp | 12 de 19 |
+| Recordatorios automáticos (WhatsApp o email) | 10 de 19 |
+| Historia clínica electrónica | 13 de 19 |
+| Integración con WhatsApp | 7 de 19 |
+
+> **Corrección aplicada el 2026-10-05 (H-08).** Esta tabla decía
+> «Recordatorios automáticos 13 de 19», «Historia clínica electrónica 17 de
+> 19» y «Recordatorios por WhatsApp 12 de 19». Ninguna de las tres cifras tiene
+> respaldo en `docs/discovery/informe-discovery.md`, que es el artefacto
+> auditado de la etapa 2 y la única fuente citada por esta sección. Se
+> adoptaban las del informe §B: 10 de 19, 13 de 19 y 7 de 19.
+>
+> El patrón del error sugiere un desalineamiento de filas más que una
+> medición distinta: la tabla del informe tiene «Recordatorios 10/19» y
+> «Historia clínica 13/19», y los valores anteriores de esta KB intercambian y
+> suben ambas cifras. Como no hay fuente que los sostenga, quedan
+> **descartados**, no promediados.
+>
+> Si alguien tenía una medición propia detrás de 13/17/12, hay que volver a
+> relevar las 19 fichas y recién entonces escribir; no basta con reescribir
+> la fila.
 
 Consecuencia de producto: **la agenda no es un diferencial**. La agregación por
 sillón tampoco lo es, porque el competidor de mejor puntuación ya lo hace.

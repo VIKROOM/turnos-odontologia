@@ -15,9 +15,17 @@ riesgo alto es una bomba con mecha.
 mensajería.
 **Contexto**: Discovery no encontró dependencias externas obligatorias para el
 flujo mínimo de agenda, y determinó que sumar integraciones agrega al menos seis
-meses de trabajo. Solo **1 de 19** sistemas del relevamiento gestiona obras
-sociales o prepagas, y el competidor más parecido a nuestra v1 (DentalFLOW)
-declaraba WhatsApp como «en camino» en lugar dearlo activo (hallazgo H-03).
+meses de trabajo. Solo **1 de 19** sistemas del relevamiento tiene un producto
+de control prestacional para gerenciadoras de obras sociales (Bilog), y **8 de
+19** registran obras sociales o convenios como dato del paciente; el competidor
+más parecido a nuestra v1 (DentalFLOW) declaraba WhatsApp como «en camino» en
+lugar dearlo activo (hallazgo H-03).
+> **Corrección aplicada el 2026-10-05 (H-08).** Este contexto decía «Solo 1 de
+> 19 sistemas gestiona obras sociales o prepagas», que mezcla dos mediciones y
+> además contradice el 8/19 del informe §B. Se desambiguaron las dos. **La
+> decisión DD-01 no cambia**: el argumento fuerte es el costo de integración,
+> no el conteo. Lo que sí cambia es que la justificación no puede apoyarse en
+> una cifra única.
 **Alternativas consideradas**: (a) integrar obras sociales desde el arranque;
 (b) integrar solo recordatorios por email; (c) sin integraciones.
 **Justificación**: el flujo de reserva no necesita ningún tercero. Agregar
