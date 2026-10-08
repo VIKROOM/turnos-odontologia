@@ -1,0 +1,116 @@
+﻿Verify — crear-turno-sin-solapamientos
+
+> **Fase**: `verify` (OPSX) · **Fecha**: 2026-10-07
+> **Change**: `crear-turno-sin-solapamientos` (schema `spec-driven`) — apply de las 24 tareas restantes (3.6, 4.1-4.7, 5.1-5.13, 6.1-6.3)
+> **Alcance de esta nota**: evidencia de verificación final. Sin commit, sin push, sin archive.
+> **Idioma**: español. Los keywords estructurales de OpenSpec (`proposal.md`, `design.md`, `tasks.md`, `spec`) se mantienen en inglés.
+
+---
+
+## Comandos ejecutados
+
+1. `docker compose up -d db` (raíz del repo) — DB del compose para los tests.
+2. `docker compose exec -T db psql -U turnos -d turnos -c "SHOW server_version"` — health check.
+3. `openspec validate crear-turno-sin-solapamientos --strict` — validación estricta del spec delta.
+4. `openspec instructions apply --change "crear-turno-sin-solapamientos" --json` — conteo de tasks.
+5. Desde `backend/`: `.venv\Scripts\python.exe -m pytest tests -v` — suite completa con nombres de test.
+
+## Resultados
+
+| Verificación | Resultado |
+|---|---|
+| Health check DB (`SHOW server_version`) | `15.19` — `postgres:15-alpine` en Docker (DD-10/11), NO el PG17 nativo del host |
+| Safety net inicial (antes de escribir) | `35 passed` en 3.67s |
+| Suite final completa | `44 passed, 1 warning in 12.85s` (exit 0) — salida completa abajo |
+| `openspec validate --strict` | `Change 'crear-turno-sin-solapamientos' is valid` (exit 0, 0 issues) |
+| `openspec instructions apply` (progreso) | `total 39 / complete 39 / remaining 0` |
+| Test de concurrencia 5.10 (10 corridas internas) | 1x201 + 1x409 en las 10 corridas; repetido en 4 ejecuciones seguidas de pytest (40 corridas totales) = 0 flakiness |
+| Test de concurrencia 5.11 (5 corridas internas) | 2x201 en todas; repetido en 4 ejecuciones seguidas (20 corridas) = 0 flakiness |
+| Sonda SQLSTATE (10 rondas, 2 hilos, misma barrera) | 10/10 rondas con exactamente 1 exito + 1 rechazo; del perdedor: **23P01 x6, 40P01 x4** (40% deadlock en esta corrida) — confirma el mapeo D4 ampliado a {23P01, 40P01} |
+| `grep sqlite/in-memory/dobles` sobre `tests/` | Sin usos: solo docstrings "NUNCA SQLite"; el unico `monkeypatch` de `DATABASE_URL` apunta al PG real; `create_engine(database_url)` conecta al servicio `db` |
+| Trazabilidad `RN-XX` en `backend/` (tests + codigo) | RN-AGE-01: 22 · RN-AGE-03: 30 · RN-GEN-01: 9 · RN-GEN-04: 4 · RN-GEN-05: 6 — todos >= 1 |
+
+## Escenarios del spec (13/13 cubiertos)
+
+| # | Scenario | Test | RN |
+|---|---|---|---|
+| 5.1 | Camino feliz - turno creado y persistido | `test_camino_feliz_turno_creado_y_persistido` | RN-AGE-01 |
+| 5.2 | La duracion no es un parametro libre del cliente | `test_duracion_no_es_parametro_libre_del_cliente[3 casos]` | RN-AGE-01 |
+| 5.3 | Solapamiento parcial rechazado | `test_solapamiento_parcial_rechazado` | RN-AGE-03 |
+| 5.4 | Intervalo contenido rechazado | `test_intervalo_contenido_rechazado` | RN-AGE-03 |
+| 5.5 | Mismo intervalo en otro recurso permitido | `test_mismo_intervalo_en_otro_recurso_permitido` | RN-AGE-03 |
+| 5.6 | El servidor valida aunque el cliente no | `test_servidor_valida_aunque_cliente_no` | RN-GEN-04 |
+| 5.7 | Turno que empieza cuando otro termina - permitido | `test_turno_empieza_cuando_otro_termina_aceptado` | RN-AGE-01, RN-AGE-03 |
+| 5.8 | Turno que termina cuando otro empieza - permitido | `test_turno_termina_cuando_otro_empieza_aceptado` | RN-AGE-01, RN-AGE-03 |
+| 5.9 | Turno que empieza cuando otro empieza - rechazado | `test_turno_empieza_cuando_otro_empieza_rechazado` | RN-AGE-03 |
+| 5.10 | Dos escrituras simultaneas - un solo exito | `test_escrituras_simultaneas_mismo_intervalo_un_solo_exito` | RN-AGE-01, RN-GEN-01 |
+| 5.11 | Escrituras simultaneas en recursos distintos - ambas exitosas | `test_escrituras_simultaneas_recursos_distintos_ambas_exitosas` | RN-AGE-01, RN-GEN-01 |
+| 5.12 | Escritura que evade la validacion de dominio igualmente rechazada | `test_escritura_directa_solapada_rechazada_por_la_base` | RN-GEN-01 |
+| 5.13 | Violacion de exclusion responde 409 sin exito falso | `test_escritura_falla_en_la_base_responde_409_sin_exito` + `test_deadlock_en_la_escritura_responde_409_sin_exito` | RN-GEN-05 |
+
+## Archivos creados/cambiados en apply
+
+- `backend/tests/test_garantia_exclusion.py` (nuevo) — 4.1/4.2/5.12: INSERT directo con SQL crudo, 3 geometrias, SQLSTATE 23P01, sin codigo de aplicacion.
+- `backend/tests/test_crear_turno_api.py` — +8 tests: 5.5, 5.7, 5.8, 5.9, 4.3 (23P01→409), 4.3b (40P01→409), 4.5/4.6/5.10 (concurrencia 10 corridas), 4.7/5.11 (recursos distintos 5 corridas); helper `post_en_paralelo` con `threading.Barrier`.
+- `backend/app/infrastructure/db/repositorio_reservas.py` — D4: `insertar_turno` traduce `(ExclusionViolation, DeadlockDetected)` = {23P01, 40P01} → `SolapamientoDetectado` → HTTP 409.
+- `openspec/changes/crear-turno-sin-solapamientos/tasks.md` — 24 checkboxes marcados (39/39).
+- `backend/_probe_concurrencia.py` — eliminado al cierre (hallazgos registrados en `design.md` D4 y arriba).
+
+## Salida completa de la suite final
+
+============================= test session starts =============================
+collecting ... collected 44 items
+
+tests/test_app.py::test_app_exposes_healthz_route PASSED                 [  2%]
+tests/test_config.py::test_settings_read_secret_env_vars PASSED          [  4%]
+tests/test_config.py::test_settings_defaults_for_non_secret_vars PASSED  [  6%]
+tests/test_core_models_schema.py::test_migracion_crea_las_ocho_tablas_y_registra_revision PASSED [  9%]
+tests/test_core_models_schema.py::test_btree_gist_habilitado_y_constraint_exclusion_definido PASSED [ 11%]
+tests/test_core_models_schema.py::test_integridad_referencial_obligatoria_practicaduracion_fk PASSED [ 13%]
+tests/test_core_models_schema.py::test_toda_fila_queda_con_timestamps PASSED [ 15%]
+tests/test_core_models_schema.py::test_turno_se_persiste_con_paciente_y_practica PASSED [ 18%]
+tests/test_core_models_schema.py::test_turno_sin_paciente_rechazado PASSED [ 20%]
+tests/test_core_models_schema.py::test_turno_sin_practica_rechazado PASSED [ 22%]
+tests/test_core_models_schema.py::test_bloqueo_con_paciente_rechazado PASSED [ 25%]
+tests/test_core_models_schema.py::test_escritura_directa_solapada_rechazada PASSED [ 27%]
+tests/test_core_models_schema.py::test_turno_cancelado_no_ocupa_el_indice PASSED [ 29%]
+tests/test_core_models_schema.py::test_turno_contra_bloqueo_rechazado PASSED [ 31%]
+tests/test_core_models_schema.py::test_bloqueo_contra_bloqueo_rechazado PASSED [ 34%]
+tests/test_core_models_schema.py::test_mismo_intervalo_en_otro_recurso_admitido PASSED [ 36%]
+tests/test_core_models_schema.py::test_intervalo_contiguo_admitido PASSED [ 38%]
+tests/test_core_models_schema.py::test_mismo_instante_de_inicio_rechazado PASSED [ 40%]
+tests/test_core_models_schema.py::test_intervalo_invertido_o_vacio_rechazado PASSED [ 43%]
+tests/test_core_models_schema.py::test_dos_escrituras_simultaneas_mismo_intervalo_un_solo_exito PASSED [ 45%]
+tests/test_crear_turno_api.py::test_camino_feliz_turno_creado_y_persistido PASSED [ 47%]
+tests/test_crear_turno_api.py::test_solapamiento_parcial_rechazado PASSED [ 50%]
+tests/test_crear_turno_api.py::test_intervalo_contenido_rechazado PASSED [ 52%]
+tests/test_crear_turno_api.py::test_servidor_valida_aunque_cliente_no PASSED [ 54%]
+tests/test_crear_turno_api.py::test_duracion_no_es_parametro_libre_del_cliente[duracion] PASSED [ 56%]
+tests/test_crear_turno_api.py::test_duracion_no_es_parametro_libre_del_cliente[duracion_minutos] PASSED [ 59%]
+tests/test_crear_turno_api.py::test_duracion_no_es_parametro_libre_del_cliente[fin] PASSED [ 61%]
+tests/test_crear_turno_api.py::test_mismo_intervalo_en_otro_recurso_permitido PASSED [ 63%]
+tests/test_crear_turno_api.py::test_turno_empieza_cuando_otro_termina_aceptado PASSED [ 65%]
+tests/test_crear_turno_api.py::test_turno_termina_cuando_otro_empieza_aceptado PASSED [ 68%]
+tests/test_crear_turno_api.py::test_turno_empieza_cuando_otro_empieza_rechazado PASSED [ 70%]
+tests/test_crear_turno_api.py::test_escritura_falla_en_la_base_responde_409_sin_exito PASSED [ 72%]
+tests/test_crear_turno_api.py::test_deadlock_en_la_escritura_responde_409_sin_exito PASSED [ 75%]
+tests/test_crear_turno_api.py::test_escrituras_simultaneas_mismo_intervalo_un_solo_exito PASSED [ 77%]
+tests/test_crear_turno_api.py::test_escrituras_simultaneas_recursos_distintos_ambas_exitosas PASSED [ 79%]
+tests/test_db_connection.py::test_db_connection_against_postgres_service PASSED [ 81%]
+tests/test_domain_agenda.py::test_fin_derivado_de_practica PASSED        [ 84%]
+tests/test_domain_agenda.py::test_fin_de_fin_no_solapa PASSED            [ 86%]
+tests/test_domain_agenda.py::test_mismo_inicio_si_solapa PASSED          [ 88%]
+tests/test_domain_agenda.py::test_mismo_intervalo_en_otro_recurso_no_compara PASSED [ 90%]
+tests/test_domain_agenda.py::test_intervalo_contenido_solapa PASSED      [ 93%]
+tests/test_domain_agenda.py::test_intervalos_disjuntos_no_solapan PASSED [ 95%]
+tests/test_domain_agenda.py::test_b_termina_donde_a_empieza_no_solapa PASSED [ 97%]
+tests/test_garantia_exclusion.py::test_escritura_directa_solapada_rechazada_por_la_base PASSED [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\maxim\Desktop\turnos-odontologia\backend\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 44 passed, 1 warning in 12.85s ========================
+
