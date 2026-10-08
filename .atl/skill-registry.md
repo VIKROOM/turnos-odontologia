@@ -8,17 +8,17 @@
 
 ## User Skills
 
-All user-level skills live in `C:\Users\GERMAN\.config\opencode\skills\`. No project-level skill dirs exist (`.opencode/skills/`, `.claude/skills/`, `skills/` contain only `openspec-*` workflow skills — see Excluded below).
+All user-level skills live in `C:\Users\Usuario\.config\opencode\skills\`. No project-level skill dirs exist (`.opencode/skills/`, `.claude/skills/`, `skills/` contain only `openspec-*` workflow skills — see Excluded below).
 
 | Trigger | Skill | Path |
 |---------|-------|------|
-| `/active-orchestrator:init\|:kb\|:rules\|:openspec\|:devops\|:find-skill\|:registry` — or "start a new project from scratch using SDD/OpenSpec foundation flow" | active-orchestrator | `C:\Users\GERMAN\.config\opencode\skills\active-orchestrator\SKILL.md` |
-| "crear/generar/actualizar AGENTS.md o CLAUDE.md", "armar las reglas del proyecto", "instrucciones para los agentes", after kb-creator + roadmap-generator | agents-md-generator (dir: `agent-instruction`) | `C:\Users\GERMAN\.config\opencode\skills\agent-instruction\SKILL.md` |
-| Before declaring a task done — after implementing, after tests go green, "¿esto ya está?", "¿cumple lo pedido?" | criterios-aceptacion-check | `C:\Users\GERMAN\.config\opencode\skills\criterios-aceptacion-check\SKILL.md` |
-| "find a skill for X", "is there a skill that can...", "how do I do X", "can you do X" | find-skills (dir: `find-skill`) | `C:\Users\GERMAN\.config\opencode\skills\find-skill\SKILL.md` |
-| "crear base de conocimiento", "generar KB desde los docs", "documentar proyecto", build KB from .txt/.docx/.pdf | kb-creator | `C:\Users\GERMAN\.config\opencode\skills\kb-creator\SKILL.md` |
-| "armar CHANGES", "armar roadmap", "crear mapa de changes", "generar plan de implementación", "qué changes necesito" | roadmap-generator | `C:\Users\GERMAN\.config\opencode\skills\roadmap-generator\SKILL.md` |
-| Create a new skill, edit/optimize an existing skill, run evals, benchmark, optimize a skill's description for triggering | skill-creator | `C:\Users\GERMAN\.config\opencode\skills\skill-creator\SKILL.md` |
+| `/active-orchestrator:init\|:kb\|:rules\|:openspec\|:devops\|:find-skill\|:registry` — or "start a new project from scratch using SDD/OpenSpec foundation flow" | active-orchestrator | `C:\Users\Usuario\.config\opencode\skills\active-orchestrator\SKILL.md` |
+| "crear/generar/actualizar AGENTS.md o CLAUDE.md", "armar las reglas del proyecto", "instrucciones para los agentes", after kb-creator + roadmap-generator | agents-md-generator (dir: `agent-instruction`) | `C:\Users\Usuario\.config\opencode\skills\agent-instruction\SKILL.md` |
+| Before declaring a task done — after implementing, after tests go green, "¿esto ya está?", "¿cumple lo pedido?" | criterios-aceptacion-check | `C:\Users\Usuario\.config\opencode\skills\criterios-aceptacion-check\SKILL.md` |
+| "find a skill for X", "is there a skill that can...", "how do I do X", "can you do X" | find-skills (dir: `find-skill`) | `C:\Users\Usuario\.config\opencode\skills\find-skill\SKILL.md` |
+| "crear base de conocimiento", "generar KB desde los docs", "documentar proyecto", build KB from .txt/.docx/.pdf | kb-creator | `C:\Users\Usuario\.config\opencode\skills\kb-creator\SKILL.md` |
+| "armar CHANGES", "armar roadmap", "crear mapa de changes", "generar plan de implementación", "qué changes necesito" | roadmap-generator | `C:\Users\Usuario\.config\opencode\skills\roadmap-generator\SKILL.md` |
+| Create a new skill, edit/optimize an existing skill, run evals, benchmark, optimize a skill's description for triggering | skill-creator | `C:\Users\Usuario\.config\opencode\skills\skill-creator\SKILL.md` |
 
 ## Compact Rules
 

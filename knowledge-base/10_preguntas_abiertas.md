@@ -64,22 +64,25 @@ mercado.
 
 ## Lo que Discovery no evidencio
 
-Este bloque es el más importante del archivo. Son diez preguntas que el
-relevamiento **no pudo responder**, y que por lo tanto no pueden darse por
-certainas en ninguna parte del sistema.
+Este bloque es el más importante del archivo. Estos son los puntos que el
+Discovery dejó como "No evidenciado", tal como figuran en `discovery/discovery.md`.
 
-| # | Cuestion no evidenciada | Por que importa | Como se podría responder |
-|---|------------------------|-----------------|-------------------------|
-| 1 | Facturación a obras sociales sin sistema previo: no se evaluó ningún caso | La integración agrega al menos seis meses | Contactar a un consultorio que facture a obra social |
-| 2 | Recordatorios automáticos: no hay medición pública de reducción de ausencias | Es la justificación del valor de esa funcionalidad | Medir ausencias con y sin recordatorio en un consultorio piloto |
-| 3 | Historia clínica: no se sabe si se completa una sola vez o con mínimo de notas por turno | Cambia el modelo de datos y el tiempo de atención | Observar a un odontólogo durante una semana |
-| 4 | App móvil: 0 de 19 sistemas, pero el consultorio de un profesional tiene flujo limitado | No se sabe si la demanda de app existe | Preguntar a tres odontólogos si usan el celular en el consultorio |
-| 5 | IA: no se evaluó ningún competidor con evidencia pública | No permite afirmar que la IA sea un diferencial | Revisar los sitios de los 19 y buscar funciones de IA publicadas |
-| 6 | Portafolio electrónico y facturación: 1 de 19 lo tiene | Es el único dato de penetración real que hay | Repetir el relevamiento con la variable "facturación" |
-| 7 | El mercado objetivo no esta segmentado; la versión apunta a unipersonal | Si el segmento real es otro, el producto esta mal definido | Segmentar por tamano de consultorio y comparar resultados |
-| 8 | Los sistemas no tienen un ejecutor, así que no se pueden comparar tiempos reales | Toda comparación es sobre features declaradas, no sobre uso | Necesita instalarlos y probarlos |
-| 9 | No hay una muestra representativa del rubro | Ver IN-04 | Muestreo aleatorio sobre un padron, no sobre una busqueda |
-| 10 | No hay verificación de uso real por parte de profesionales | Todo el relevamiento es sobre lo que el proveedor dice, no sobre lo que el odontólogo hace | Entrevistas con usuarios de los 19 sistemas |
+- **No evidenciado** — duración promedio real por práctica odontológica. Ningún
+  competitor publica un nomenclador de duraciones abierto; hay que configurarlas
+  a mano.
+- **No evidenciado** — precio real de la mayoría. 8 de 19 no publican precio;
+  DentalPro y Lumident cobran en USD, turnosuno publica promo con 80% off.
+- **No evidenciado** — que la agenda por sillón sea un factor de compra
+  decisionario. Sólo Órbita la nombra como eje y no publica su precio, así que
+  no hay forma de saber si se cobra.
+- **No evidenciado** — número real de usuarios activos. DenPro declara "+500
+  profesionales", DentalSoft "300+ clínicas", DentalTec "2.000+ profesionales":
+  son cifras declaradas por el vendedor, sin auditoría ni fuente primaria.
+- **No evidenciado** — si algún competidor argentino cumple efectivamente la Ley
+  27.553 de receta electrónica en producción. ClinIA declara identificador 248 en
+  ReNaPDiS, pero no hay verificación pública de uso real.
+
+Otros hallazgos y preguntas abiertas se mantienen en las secciones siguientes para preservar el contenido original.
 
 **Como se propaga esto en el resto de la KB**: los «Objetivo de diseño, no
 medido» de `01_vision_y_objetivos.md`, el supuesto SU-08 sobre la IA, y la

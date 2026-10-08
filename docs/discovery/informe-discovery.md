@@ -406,8 +406,6 @@ El **2026-10-03**, después de la reconciliación automática, **Facundo Chácon
 
 **Estado: reconciliación hecha; verificación manual por persona, completada el 2026-10-03.**
 
-**Estado: reconciliación hecha; verificación manual por persona, completada el 2026-10-03.**
-
 ## F. Referencias
 
 Todas consultadas el **2026-10-03**.

@@ -1,4 +1,6 @@
-# Mapa spec → test — `core/data-model` (C-02 core-models-schema)
+# Mapa spec → test
+
+## `core/data-model` (C-02 core-models-schema)
 
 Todos los tests corren en `test_core_models_schema.py` contra PostgreSQL 15 real
 en Docker (DD-10). La fixture `migrated_database` aplica `alembic upgrade head`;
@@ -27,3 +29,23 @@ spec pero exigida por la tarea 3.2: `test_btree_gist_habilitado_y_constraint_exc
 comprueba que la extensión `btree_gist` existe y que
 `reserva_agenda_sin_solapamiento` es un `EXCLUDE USING gist` con
 `recurso_id WITH =`, `tstzrange(inicio, fin, '[)') WITH &&` y el predicado parcial.
+
+## `agenda/reservas` (crear-turno-sin-solapamientos)
+
+Basado en `openspec/specs/agenda/reservas/spec.md` y `docs/opsx/verify-crear-turno-sin-solapamientos.txt`.
+
+| Requirement (spec) | Scenario | Test | RN | SQLSTATE |
+|---|---|---|---|---|
+| Creación y persistencia de un turno | Camino feliz — turno creado y persistido | `test_camino_feliz_turno_creado_y_persistido` | RN-AGE-01, RN-GEN-04 | — |
+| Creación y persistencia de un turno | La duración no es un parámetro libre del cliente | `test_duracion_no_es_parametro_libre_del_cliente[duracion]`, `test_duracion_no_es_parametro_libre_del_cliente[duracion_minutos]`, `test_duracion_no_es_parametro_libre_del_cliente[fin]` | RN-AGE-01, RN-GEN-04 | — |
+| Rechazo de creación solapada sobre el mismo recurso | Solapamiento parcial rechazado | `test_solapamiento_parcial_rechazado` | RN-AGE-03 | — |
+| Rechazo de creación solapada sobre el mismo recurso | Intervalo contenido rechazado | `test_intervalo_contenido_rechazado` | RN-AGE-03 | — |
+| Rechazo de creación solapada sobre el mismo recurso | Mismo intervalo en otro recurso permitido | `test_mismo_intervalo_en_otro_recurso_permitido` | RN-AGE-03 | — |
+| Rechazo de creación solapada sobre el mismo recurso | El servidor valida aunque el cliente no | `test_servidor_valida_aunque_cliente_no` | RN-AGE-03, RN-GEN-04 | — |
+| Intervalos semiabiertos `[inicio, fin)` | Turno que empieza cuando otro termina — permitido | `test_turno_empieza_cuando_otro_termina_aceptado` | RN-AGE-01, RN-AGE-03 | — |
+| Intervalos semiabiertos `[inicio, fin)` | Turno que termina cuando otro empieza — permitido | `test_turno_termina_cuando_otro_empieza_aceptado` | RN-AGE-01, RN-AGE-03 | — |
+| Intervalos semiabiertos `[inicio, fin)` | Turno que empieza cuando otro empieza — rechazado | `test_turno_empieza_cuando_otro_empieza_rechazado` | RN-AGE-03 | — |
+| Concurrencia arbitrada por la base de datos | Dos escrituras simultáneas del mismo intervalo — un solo éxito | `test_escrituras_simultaneas_mismo_intervalo_un_solo_exito` | RN-AGE-01, RN-GEN-01 | — |
+| Concurrencia arbitrada por la base de datos | Escrituras simultáneas en recursos distintos — ambas exitosas | `test_escrituras_simultaneas_recursos_distintos_ambas_exitosas` | RN-AGE-01, RN-GEN-01 | — |
+| Garantía de exclusión declarativa en la base | Escritura que evade la validación de dominio igualmente rechazada | `test_escritura_directa_solapada_rechazada_por_la_base` | RN-GEN-01 | `23P01` |
+| El conflicto de exclusión se mapea a un error de dominio | Violación de exclusión responde 409 sin éxito falso | `test_escritura_falla_en_la_base_responde_409_sin_exito`, `test_deadlock_en_la_escritura_responde_409_sin_exito` | RN-GEN-05 | `23P01`, `40P01` |

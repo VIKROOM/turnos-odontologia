@@ -8,6 +8,10 @@ Stack confirmado: FastAPI 3.11 + PostgreSQL 15 + React 18 (Vite) + Docker Compos
 
 ---
 
+## Alcance
+
+Los changes de este roadmap derivan del MVP imprescindible definido en la sección D.3 del informe de Discovery (`docs/discovery/informe-discovery.md`). Cada change se alinea con ese alcance.
+
 ## Cómo usar este documento
 
 1. **Identificar change**: elegí `C-XX` según prioridad/dependencias.
@@ -221,11 +225,22 @@ C-01 → C-02 → C-03 → C-04 → C-05 → C-09 → C-10
   - `knowledge-base/04_modelo_de_datos.md` §"Seed data inicial"
   - `knowledge-base/03_actores_y_roles.md`
 
+### [C-11] `exportacion-datos-pacientes`
+
+- **Estado**: `[ ]` pendiente
+- **Scope**: Exportación total de datos propios (impr esc. #9 de D.3) en formato portable (CSV/JSON) para paciente/usuario, incluyendo historial clínico mínimo, con permisos adecuados, sin pedir permisos adicionales.
+- **Dependencias**: `C-03`, `C-04`, `C-06`
+- **Governance**: MEDIO
+- **Leer antes**:
+  - `knowledge-base/06_funcionalidades.md`
+  - `knowledge-base/05_reglas_de_negocio.md` (protección de datos)
+  - `docs/discovery/informe-discovery.md` §D.3
+
 ---
 
 ## Resumen
 
-- **Total changes**: 10
+- **Total changes**: 11
 - **Fases**: 4
 - **Gates de paralelismo**: 6
 - **Camino crítico**: 7 changes (C-01→C-02→C-03→C-04→C-05→C-09→C-10)
