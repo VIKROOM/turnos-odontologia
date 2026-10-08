@@ -86,7 +86,7 @@ C-01 → C-02 → C-03 → C-04 → C-05 → C-09 → C-10
 
 ### [C-01] `foundation-setup`
 
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` aplicado (pendiente `/opsx:archive`)
 - **Scope**:
   - Estructura monorepo: `backend/`, `frontend/`, `docker/`, `docs/`, `openspec/specs/`
   - `docker-compose.yml` con `postgres:15-alpine`, `backend` (FastAPI), `frontend` (Vite)
@@ -103,11 +103,12 @@ C-01 → C-02 → C-03 → C-04 → C-05 → C-09 → C-10
 
 ### [C-02] `core-models-schema`
 
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` aplicado (pendiente `/opsx:archive`)
+- **Change**: `openspec/changes/core-models-schema/`
 - **Scope**:
-  - Migración inicial con entidades: `usuario`, `recurso`, `practica`, `practicaduracion`, `disponibilidad_semanal`, `paciente`, `historiaclinica`, `turno`, `bloqueo`
-  - **EXCLUDE USING gist** para **turno-vs-turno** (mismo `recurso_id`, rangos `[inicio, fin)`) con `btree_gist`. Cubre RN-AGE-03.
-  - No intentar EXCLUDE cruzado entre tablas (imposible). Garantía turno-vs-bloqueo según decisión A/B.
+  - Migración inicial con entidades: `usuario`, `recurso`, `practica`, `practicaduracion`, `disponibilidad_semanal`, `paciente`, `historiaclinica`, `reserva_agenda` (tabla única con discriminador `tipo` — Opción A; **no** existen tablas `turno`/`bloqueo`)
+  - **EXCLUDE USING gist** parcial sobre `reserva_agenda` (`recurso_id WITH =`, `tstzrange(inicio, fin, '[)') WITH &&`, `WHERE (tipo = 'bloqueo' OR estado = 'confirmado')`) con `btree_gist`. Una sola restricción cubre **turno-vs-turno** (RN-AGE-03) y **turno-vs-bloqueo / bloqueo-vs-bloqueo** (RN-AGE-05); un turno cancelado no ocupa el índice.
+  - Modelo unificado (Opción A): `turno` y `bloqueo` son filas de `reserva_agenda`; ya no aplica el EXCLUDE cruzado entre tablas.
   - Índices, timestamps
 - **Dependencias**: `C-01`
 - **Governance**: CRITICO
